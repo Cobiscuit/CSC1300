@@ -1,0 +1,8 @@
+# Compiled C++ files
+*.exe
+*.o
+*.obj
+*.out
+
+# Build folders
+build/
