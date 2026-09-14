@@ -232,6 +232,9 @@ int main()
     cin >> trivia_game_choice;
     cout << endl << endl;
 
+    while(playing_trivia == true){
+        
+    
     switch (trivia_game_choice)
     {
         case 1: //This is normal trivia...
@@ -241,7 +244,8 @@ int main()
             cout << "1. Man Idk Im just the intern\n";
             cout << "2. Dragon Soul.\n";
             cout << "3. Demon Soul.\n";
-            cout << "4. Dark Souls.\n\n";
+            cout << "4. Dark Souls.\n";
+            cout << "5. ThunderFury, Blessed Blade of the Windseeker.\n\n";
 
             cout << contestants_name << "'s answer: ";
             cin >> answer_2_question_1;
@@ -284,8 +288,16 @@ int main()
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "DID SOMEONE SAY THUNDERFURY BLESSED BLADE OF THE WINDSEEKER?... yes, well more than likely...\n";
+                    cout << "Sadly however that isnt the correct answer, youre going to be deducted 100 points...";
+                    hidden_alliance--;
+                    points -= 100;
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } //end of case 1/question 1
 
@@ -294,7 +306,8 @@ int main()
             cout << "1. Ashbringer\n";
             cout << "2. Shadowmourne.\n";
             cout << "3. Frostmourne.\n";
-            cout << "4. Thunderfury.\n\n";
+            cout << "4. ThunderFury, Blessed Blade of the Windseeker.\n";
+            cout << "5. Light's Vengeance.\n\n";
             cin >> answer_2_question_2;
 
             switch (answer_2_question_2)
@@ -302,6 +315,7 @@ int main()
                 case 1:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -310,6 +324,7 @@ int main()
                 case 2:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -318,6 +333,7 @@ int main()
                 case 3:
                     cout << "sorry but thats... Wait no thats correct, nevermind!\n";
                     hidden_alliance++;
+                    hidden_horde--;
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -326,10 +342,21 @@ int main()
                 case 4:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
+
+                case 5:
+                    cout << "Listen youre kinda right, that its a weapon once weilded by Arthas... but its not a runeblade!\n";
+                    cout << "You will be deducted 100 points!\n\n";
+                    hidden_horde ++;
+                    hidden_alliance--;
+                    points -= 100;
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
 
                 default:
                     cout << "Please Give and answer using 1,2,3 or 4 please...\n";
@@ -340,7 +367,8 @@ int main()
             cout << "1. Thunder Bluff.\n";
             cout << "2. Silvermoon City.\n";
             cout << "3. Undercity.\n";
-            cout << "4. Orgrimmar.\n\n";
+            cout << "4. Orgrimmar.\n";
+            cout << "5. Stormwind City\n\n";
             cin >> answer_2_question_3;
 
             switch (answer_2_question_3)
@@ -348,6 +376,7 @@ int main()
                 case 1:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -356,6 +385,7 @@ int main()
                 case 2:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -364,6 +394,7 @@ int main()
                 case 3:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -372,13 +403,23 @@ int main()
                 case 4:
                     cout << "sorry but thats... Wait no thats correct, nevermind!\n";
                     hidden_alliance++;
+                    hidden_horde--;
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "Did... did you just... I think you should leave... that wasnt even the right faction.\n";
+                    hidden_alliance+= 2;
+                    hidden_horde -= 2;
+                    points -= 100;
+                    cout << "You've lost 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 3 put question 4 here
 
@@ -386,7 +427,8 @@ int main()
             cout << "1. Malygos.\n";
             cout << "2. Nozdormu.\n";
             cout << "3. Neltharion.\n";
-            cout << "4. Nefarian.\n\n";
+            cout << "4. Nefarian.\n";
+            cout << "5. Gulduron\n\n";
             cin >> answer_2_question_4;
 
             switch (answer_2_question_4)
@@ -423,8 +465,16 @@ int main()
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "Sadly my Fire Mage isnt nearly as strong as a world breaking dragon...\n";
+                    cout << "BECAUSE HE IS STRONGER, IVE DEFEAT THAT DRAGON HUNDREDS OF TIMES...\n";
+                    cout << "Sadly youre still going to lose points for that one though...";
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 4 put question 5 here
 
@@ -432,7 +482,8 @@ int main()
             cout << "1. Arthas Menethil.\n";
             cout << "2. Gul'dan.\n";
             cout << "3. Kael'thas Sunstrider.\n";
-            cout << "4. Illidan Stormrage.\n\n";
+            cout << "4. Illidan Stormrage.\n";
+            cout << "5. Legionnaire Kigamusha\n\n";
             cin >> answer_2_question_5;
 
             switch (answer_2_question_5)
@@ -469,8 +520,17 @@ int main()
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "HEY THE ONLY THING MY WARRIOR BETRAYED WAS NOT MAKING IT TO GLADIATOR...\n";
+                    hidden_horde ++;
+                    hidden_alliance--;
+                    points -= 100;
+                    cout << "You've earned 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 5 put question 6 here
 
@@ -478,7 +538,8 @@ int main()
             cout << "1. Naxxramas.\n";
             cout << "2. Ulduar.\n";
             cout << "3. Icecrown Citadel.\n";
-            cout << "4. Trial of the Crusader.\n\n";
+            cout << "4. Trial of the Crusader.\n";
+            cout << "5. Stratholme\n\n";
             cin >> answer_2_question_6;
 
             switch (answer_2_question_6)
@@ -486,6 +547,7 @@ int main()
                 case 1:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -494,6 +556,7 @@ int main()
                 case 2:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -502,6 +565,7 @@ int main()
                 case 3:
                     cout << "sorry but thats... Wait no thats correct, nevermind!\n";
                     hidden_alliance++;
+                    hidden_horde--;
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -510,13 +574,23 @@ int main()
                 case 4:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
+                    points -= 100;
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
+                case 5:
+                    cout << "Thats not the raid hes in, just the city he burned to the ground...\n";
+                    hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 6 put question 7 here
 
@@ -524,7 +598,8 @@ int main()
             cout << "1. Red Dragonflight.\n";
             cout << "2. Blue Dragonflight.\n";
             cout << "3. Bronze Dragonflight.\n";
-            cout << "4. Black Dragonflight.\n\n";
+            cout << "4. Black Dragonflight.\n";
+            cout << "5. Green Dragonflight\n\n";
             cin >> answer_2_question_7;
 
             switch (answer_2_question_7)
@@ -532,6 +607,7 @@ int main()
                 case 1:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -540,6 +616,7 @@ int main()
                 case 2:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -548,6 +625,7 @@ int main()
                 case 3:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -556,13 +634,23 @@ int main()
                 case 4:
                     cout << "sorry but thats... Wait no thats correct, nevermind!\n";
                     hidden_alliance++;
+                    hidden_horde--;
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "sorry but thats incorrect...\n";
+                    hidden_alliance--;
+                    hidden_horde++;
+                    points -= 100;
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 7 put question 8 here
 
@@ -570,7 +658,8 @@ int main()
             cout << "1. Kil'jaeden.\n";
             cout << "2. Archimonde.\n";
             cout << "3. Gul'dan.\n";
-            cout << "4. Sargeras.\n\n";
+            cout << "4. Sargeras.\n";
+            cout << "5. Arthas Menethil\n\n";
             cin >> answer_2_question_8;
 
             switch (answer_2_question_8)
@@ -578,6 +667,7 @@ int main()
                 case 1:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -586,6 +676,7 @@ int main()
                 case 2:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -594,6 +685,7 @@ int main()
                 case 3:
                     cout << "sorry but thats incorrect...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
@@ -602,13 +694,23 @@ int main()
                 case 4:
                     cout << "sorry but thats... Wait no thats correct, nevermind!\n";
                     hidden_alliance++;
+                    hidden_horde--;
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "sorry but thats incorrect...\n";
+                    hidden_alliance--;
+                    hidden_horde++;
+                    points -= 100;
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 8 put question 9 here
 
@@ -616,7 +718,8 @@ int main()
             cout << "1. Ironforge.\n";
             cout << "2. Stormwind City.\n";
             cout << "3. Lordaeron.\n";
-            cout << "4. Gilneas.\n\n";
+            cout << "4. Gilneas.\n";
+            cout << "5. Orgrimmar\n\n";
             cin >> answer_2_question_9;
 
             switch (answer_2_question_9)
@@ -653,8 +756,18 @@ int main()
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5:
+                    cout << "We went over this earlier...\n";
+                    cout << "This is the Horde capital! but I know why you picked this one.\n";
+                    hidden_alliance--;
+                    hidden_horde++;
+                    points -= 100;
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 9 put question 10 here
 
@@ -662,7 +775,8 @@ int main()
             cout << "1. Stormwind.\n";
             cout << "2. Gilneas.\n";
             cout << "3. Alterac.\n";
-            cout << "4. Lordaeron.\n\n";
+            cout << "4. Lordaeron.\n";
+            cout << "5. Icecrown Citadel\n\n";
             cin >> answer_2_question_10;
 
             switch (answer_2_question_10)
@@ -699,8 +813,17 @@ int main()
                     cout << contestants_name << "'s total points: " << points << endl;
                     break;
 
+                case 5: 
+                    cout << "I... Thats not a city, but the raid he was defeated in while he was the Lich King.\n";
+                    hidden_alliance--;
+                    hidden_horde++;
+                    points -= 100;
+                    cout << "You will be deducted 100 points!\n\n";
+                    cout << contestants_name << "'s total points: " << points << endl;
+                    break;
+
                 default:
-                    cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
                     break;
             } // end of question 10
 
@@ -1212,5 +1335,7 @@ int main()
             cout << "Please choose 1 or 2.\n";
             break;
     } // end of inital switch, for choosing game style
+
+    }//end of game loop
 
 } // end of int main.

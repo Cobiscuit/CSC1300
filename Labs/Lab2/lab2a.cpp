@@ -41,7 +41,7 @@ int main(){
     //Now we want to do the math to get wing_total
     bill_total = wing_amount * WING_COST;
 
-    //wanted to make it a bit mroe user friendly and nice to look at.
+    //wanted to make it a bit more user friendly and nice to look at.
     // we went over setw in class so I figured using it here wouldnt be an issue but incase
     // https://www.w3schools.com/cpp/ref_iostream_cout.asp - This is where I know it from
     cout << "Total before tax: " << setw(0) << right  << '$' << bill_total <<  endl;
