@@ -38,6 +38,7 @@ _____                                                   _____
 #include <cctype>
 #include <cstdlib>
 #include <string>
+#include <cctype>
 //Im testing something with chrono for a time func
 #include <chrono>
 
@@ -70,6 +71,10 @@ int main()
     //testing nums
 
     //vars
+    //game loop start
+    bool playing_trivia(true);
+    string playing_trivia_restart("");
+    
     // ints
     int hidden_alliance(0);
     int hidden_horde(0);
@@ -216,6 +221,14 @@ int main()
     
     //We start dah code here
 
+    while(playing_trivia == true){
+
+    // RESET GAME VALUES
+        points = 0;
+        hidden_alliance = 0;
+        hidden_horde = 0;
+        sus_points = 0;
+    
 
     cout << "=========================================================\n";
     cout << "Welcome To Warcraft Trivia night! Hosted by Sargeras!\n";
@@ -232,7 +245,7 @@ int main()
     cin >> trivia_game_choice;
     cout << endl << endl;
 
-    while(playing_trivia == true){
+    
         
     
     switch (trivia_game_choice)
@@ -1336,6 +1349,40 @@ int main()
             break;
     } // end of inital switch, for choosing game style
 
+    cout << "Do you want to play the game again?";
+
+    bool valid_restart_answer = false;
+    
+    while (valid_restart_answer == false)
+    {
+        cout << "Do you want to play the game again? (yes/no): ";
+        cin >> playing_trivia_restart;
+    
+        for (auto& i : playing_trivia_restart)
+        {
+            i = (char)tolower(i);
+        }
+    
+        if (playing_trivia_restart == "yes" || playing_trivia_restart == "y")
+        {
+            playing_trivia = true;
+            valid_restart_answer = true;
+            cin.ignore(); // need this because restarting the game... we ask for the name and its a getline()
+        }
+        else if (playing_trivia_restart == "no" || playing_trivia_restart == "n")
+        {
+            playing_trivia = false;
+            valid_restart_answer = true;
+        }
+        else
+        {
+            cout << "Invalid input. Please type yes/no or y/n.\n";
+        }
+    }//end of game restart loop
+    
+    
     }//end of game loop
+    
+    
 
 } // end of int main.
