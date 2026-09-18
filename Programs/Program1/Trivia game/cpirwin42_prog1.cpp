@@ -33,6 +33,7 @@ _____                                                   _____
 */
 
 #include <iostream>
+#include <set>
 #include <string>
 #include <iomanip>
 #include <cctype>
@@ -82,6 +83,7 @@ int main()
     int trivia_game_choice(0);
 
     int sus_points(0);
+    int width_of_panel(70);
 
     //vars for question answers
     int answer_2_question_1(0);
@@ -217,6 +219,18 @@ int main()
 
     //bools
     bool answering_q1(true);
+    bool answering_q2(true);
+    bool answering_q3(true);
+    bool answering_q4(true);
+    bool answering_q5(true);
+    bool answering_q6(true);
+    bool answering_q7(true);
+    bool answering_q8(true);
+    bool answering_q9(true);
+    bool answering_q10(true);
+    bool answering_q11(true);
+    bool answering_q12(true);
+
 
     
     //We start dah code here
@@ -237,13 +251,18 @@ int main()
     cout << "Contestants name: ";
     getline(cin, contestants_name);
 
+    cout << string(width_of_panel,'=') << endl;
+    
     cout << "Now for my next question, " << contestants_name << " , do you want to play Trivia... or\n";
     cout << "DO YOU WANT TO PLAY TRIVIA WHERE I KINDA MAKE FUN OF YOU, jokingly, in minecraft... yea in minecraft...\n";
+    cout << string(width_of_panel,'=') << endl;
+    
     cout << "For normal Trivia: 1\n";
     cout << "For funny haha Trivia: 2\n";
     cout << contestants_name << "'s Response: ";
     cin >> trivia_game_choice;
     cout << endl << endl;
+    cout << string(width_of_panel,'=') << endl;
 
     
         
@@ -252,6 +271,10 @@ int main()
     {
         case 1: //This is normal trivia...
         {
+            while (answering_q1 == true) {
+        
+                
+            cout << string(width_of_panel,'=') << endl;
             cout << "Okay " << contestants_name << " for your first question:" << endl;
             cout << WARCRAFT_TRIVIA_QUESTION_1;
             cout << "1. Man Idk Im just the intern\n";
@@ -259,9 +282,11 @@ int main()
             cout << "3. Demon Soul.\n";
             cout << "4. Dark Souls.\n";
             cout << "5. ThunderFury, Blessed Blade of the Windseeker.\n\n";
+            cout << string(width_of_panel,'=') << endl;
 
             cout << contestants_name << "'s answer: ";
             cin >> answer_2_question_1;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_1)
             {
@@ -272,14 +297,19 @@ int main()
                     cout << "Sadly that is incorrect!\n";
                     cout << " You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q1 = false;
+                     
                     break;
 
                 case 2:
                     cout << "That is correct! congradulations Youve earned 100 points!\n";
                     hidden_horde++;
+                    hidden_alliance--;
                     points += 100;
                     cout << "You will be given 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     answering_q1 = false;
                     break;
 
@@ -290,30 +320,43 @@ int main()
                     cout << "Sadly that is incorrect!\n";
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q1 = false;
                     break;
 
                 case 4:
                     cout << "Did you just get done playing a FromSoft game??? This is a Blizzard tittle man...\n";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << "Sadly that is incorrect!\n";
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q1 = false;
                     break;
 
                 case 5:
                     cout << "DID SOMEONE SAY THUNDERFURY BLESSED BLADE OF THE WINDSEEKER?... yes, well more than likely...\n";
                     cout << "Sadly however that isnt the correct answer, youre going to be deducted 100 points...";
                     hidden_alliance--;
+                    hidden_horde++;
                     points -= 100;
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q1 = false;
                     break;
 
                 default:
                     cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                    cout << string(width_of_panel,'=') << endl;
                     break;
-            } //end of case 1/question 1
+                }//end of while case.
+            }//end of case 1/question 1
 
+            while (answering_q2 == true) {
+            
+            
             //we get question 2 asked here and answered
             cout << WARCRAFT_TRIVIA_QUESTION_2;
             cout << "1. Ashbringer\n";
@@ -322,6 +365,7 @@ int main()
             cout << "4. ThunderFury, Blessed Blade of the Windseeker.\n";
             cout << "5. Light's Vengeance.\n\n";
             cin >> answer_2_question_2;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_2)
             { // switch for question 2 choices.
@@ -332,6 +376,8 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q2 = false;
                     break;
 
                 case 2:
@@ -341,6 +387,8 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q2 = false;
                     break;
 
                 case 3:
@@ -350,6 +398,8 @@ int main()
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q2 = false;
                     break;
 
                 case 4:
@@ -359,6 +409,8 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q2 = false;
                     break;
 
                 case 5:
@@ -368,12 +420,17 @@ int main()
                     hidden_alliance--;
                     points -= 100;
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
+                    answering_q2 = false;
                     break;
 
 
                 default:
+                    
                     cout << "Please Give and answer using 1,2,3 or 4 please...\n";
+                    cout << string(width_of_panel,'=') << endl;
                     break;
+                }//end of while loop 2
             } // end of question 2 put question 3 here
 
             cout << WARCRAFT_TRIVIA_QUESTION_3;
@@ -383,6 +440,7 @@ int main()
             cout << "4. Orgrimmar.\n";
             cout << "5. Stormwind City\n\n";
             cin >> answer_2_question_3;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_3)
             { // switch for question 3 choices.
@@ -393,6 +451,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 2:
@@ -402,6 +461,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 3:
@@ -411,6 +471,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 4:
@@ -420,6 +481,7 @@ int main()
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 5:
@@ -429,10 +491,12 @@ int main()
                     points -= 100;
                     cout << "You've lost 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 default:
                     cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                    cout << string(width_of_panel,'=') << endl;
                     break;
             } // end of question 3 put question 4 here
 
@@ -443,6 +507,7 @@ int main()
             cout << "4. Nefarian.\n";
             cout << "5. Gulduron\n\n";
             cin >> answer_2_question_4;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_4)
             { // switch for question 4 choices.
@@ -452,6 +517,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 2:
@@ -460,6 +526,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 3:
@@ -468,6 +535,7 @@ int main()
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 4:
@@ -476,6 +544,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 5:
@@ -484,10 +553,12 @@ int main()
                     cout << "Sadly youre still going to lose points for that one though...";
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 default:
                     cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                    cout << string(width_of_panel,'=') << endl;
                     break;
             } // end of question 4 put question 5 here
 
@@ -498,6 +569,7 @@ int main()
             cout << "4. Illidan Stormrage.\n";
             cout << "5. Legionnaire Kigamusha\n\n";
             cin >> answer_2_question_5;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_5)
             { // switch for question 5 choices.
@@ -507,6 +579,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 2:
@@ -515,6 +588,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 3:
@@ -523,6 +597,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 4:
@@ -531,6 +606,7 @@ int main()
                     points += 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 5:
@@ -540,10 +616,13 @@ int main()
                     points -= 100;
                     cout << "You've earned 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 default:
+                    cout << string(width_of_panel,'=') << endl;
                     cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                    cout << string(width_of_panel,'=') << endl;
                     break;
             } // end of question 5 put question 6 here
 
@@ -554,6 +633,7 @@ int main()
             cout << "4. Trial of the Crusader.\n";
             cout << "5. Stratholme\n\n";
             cin >> answer_2_question_6;
+            cout << string(width_of_panel,'=') << endl;
 
             switch (answer_2_question_6)
             { // switch for question 6 choices.
@@ -564,6 +644,7 @@ int main()
                     points -= 100;
                     cout << "You will be deducted 100 points!\n\n";
                     cout << contestants_name << "'s total points: " << points << endl;
+                    cout << string(width_of_panel,'=') << endl;
                     break;
 
                 case 2:
@@ -1349,15 +1430,18 @@ int main()
             break;
     } // end of inital switch, for choosing game style
 
-    cout << "Do you want to play the game again?";
 
     bool valid_restart_answer = false;
-    
+
+    //This is the loop to see if the user wants to replay the game.
     while (valid_restart_answer == false)
     {
         cout << "Do you want to play the game again? (yes/no): ";
         cin >> playing_trivia_restart;
-    
+
+        
+        //https://www.geeksforgeeks.org/cpp/tolower-function-in-cpp/
+        // the & allows direct access and change to the string.
         for (auto& i : playing_trivia_restart)
         {
             i = (char)tolower(i);
