@@ -238,6 +238,18 @@ int main()
         hidden_alliance = 0;
         hidden_horde = 0;
         sus_points = 0;
+        answering_q1 = true;
+        answering_q2 = true;
+        answering_q3 = true;
+        answering_q4 = true;
+        answering_q5 = true;
+        answering_q6 = true;
+        answering_q7 = true;
+        answering_q8 = true;
+        answering_q9 = true;
+        answering_q10 = true;
+        answering_q11 = true;
+        answering_q12 = true;
 
         cout << "=========================================================\n";
         cout << "Welcome To Warcraft Trivia night! Hosted by Sargeras!\n";
@@ -284,6 +296,7 @@ int main()
                     switch (answer_2_question_1)
                     {
                         case 1:
+                            cout << "The correct answer was Dragon Soul.\n";
                             cout << "Same... same... I wasnt even there\n";
                             hidden_alliance--;
                             points -= 100;
@@ -307,6 +320,7 @@ int main()
                             break;
 
                         case 3:
+                            cout << "The correct answer was Dragon Soul.\n";
                             cout << "Now even I knew that wasnt the right answer, and Im the master of all demons!\n";
                             hidden_alliance--;
                             points -= 100;
@@ -318,6 +332,7 @@ int main()
                             break;
 
                         case 4:
+                            cout << "The correct answer was Dragon Soul.\n";
                             cout << "Did you just get done playing a FromSoft game??? This is a Blizzard tittle man...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -330,6 +345,7 @@ int main()
                             break;
 
                         case 5:
+                            cout << "The correct answer was Dragon Soul.\n";
                             cout << "DID SOMEONE SAY THUNDERFURY BLESSED BLADE OF THE WINDSEEKER?... yes, well more than likely...\n";
                             cout << "Sadly however that isnt the correct answer, youre going to be deducted 100 points...";
                             hidden_alliance--;
@@ -363,6 +379,7 @@ int main()
                     switch (answer_2_question_2)
                     { // switch for question 2 choices.
                         case 1:
+                            cout << "The correct answer was Frostmourne.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -374,6 +391,7 @@ int main()
                             break;
 
                         case 2:
+                            cout << "The correct answer was Frostmourne.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -396,6 +414,7 @@ int main()
                             break;
 
                         case 4:
+                            cout << "The correct answer was Frostmourne.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -407,6 +426,7 @@ int main()
                             break;
 
                         case 5:
+                            cout << "The correct answer was Frostmourne.\n";
                             cout << "Listen youre kinda right, that its a weapon once weilded by Arthas... but its not a runeblade!\n";
                             cout << "You will be deducted 100 points!\n\n";
                             hidden_horde++;
@@ -439,6 +459,7 @@ int main()
                     switch (answer_2_question_3)
                     { // switch for question 3 choices.
                         case 1:
+                            cout << "The correct answer was Orgrimmar.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -450,6 +471,7 @@ int main()
                             break;
     
                         case 2:
+                            cout << "The correct answer was Orgrimmar.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -461,6 +483,7 @@ int main()
                             break;
     
                         case 3:
+                            cout << "The correct answer was Orgrimmar.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -483,6 +506,7 @@ int main()
                             break;
     
                         case 5:
+                            cout << "The correct answer was Orgrimmar.\n";
                             cout << "Did... did you just... I think you should leave... that wasnt even the right faction.\n";
                             hidden_alliance += 2;
                             hidden_horde -= 2;
@@ -514,6 +538,7 @@ int main()
                     switch (answer_2_question_4)
                     { // switch for question 4 choices.
                         case 1:
+                            cout << "The correct answer was Neltharion.\n";
                             cout << "Close, he was head of the Blue Dragon flight\n";
                             cout << "So with that being said thats incorrect...\n";
                             hidden_alliance--;
@@ -525,6 +550,7 @@ int main()
                             break;
     
                         case 2:
+                            cout << "The correct answer was Neltharion.\n";
                             cout << "This is the leader of the Bronze Dragon flight.\n";
                             cout << "With that being said but thats incorrect...\n";
                             hidden_alliance--;
@@ -547,6 +573,7 @@ int main()
                             break;
     
                         case 4:
+                            cout << "The correct answer was Neltharion.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
                             points -= 100;
@@ -557,6 +584,7 @@ int main()
                             break;
     
                         case 5:
+                            cout << "The correct answer was Neltharion.\n";
                             cout << "Sadly my Fire Mage isnt nearly as strong as a world breaking dragon...\n";
                             cout << "BECAUSE HE IS STRONGER, IVE DEFEAT THAT DRAGON HUNDREDS OF TIMES...\n";
                             cout << "Sadly youre still going to lose points for that one though...";
@@ -588,50 +616,67 @@ int main()
                     switch (answer_2_question_5)
                     { // switch for question 5 choices.
                         case 1:
-                            cout << "sorry but thats incorrect...\n";
+                            cout << "The correct answer was Illidan Stormrage.\n";
+                            cout << "Did you know that Illidan, aka The Betrayer, once fought but Arthas as to strong?\n";
+                            cout << "Sadly youve still answered incorrectly\n";
                             hidden_alliance--;
                             hidden_horde++;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                             cout << string(width_of_panel, '=') << endl;
+                            answering_q5 = false;
                             break;
     
                         case 2:
+                            cout << "The correct answer was Illidan Stormrage.\n";
+                            cout << "No, this isnt correct. Gul'dan was a power hungry orc who died trying TO betray me...\n";
+                            cout << "The Betrayer Illidan just absorbed the power of the fel from his corpse.\n";
                             cout << "sorry but thats incorrect...\n";
+                            hidden_horde++;
                             hidden_alliance--;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                             cout << string(width_of_panel, '=') << endl;
+                            answering_q5 = false;
                             break;
     
                         case 3:
-                            cout << "sorry but thats incorrect...\n";
+                            cout << "The correct answer was Illidan Stormrage.\n";
+                            cout << "Kael'thas Sunstrider. was actually just General and the King of the Blood Elves.\n";
+                            cout << "So you didnt choose correctly\n";
+                            hidden_horde ++;
                             hidden_alliance--;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                             cout << string(width_of_panel, '=') << endl;
+                            answering_q5 = false;
                             break;
     
                         case 4:
-                            cout << "sorry but thats... Wait no thats correct, nevermind!\n";
+                            cout << "The correct answer was infact Illidan Stormrage!\n";
                             hidden_alliance++;
+                            hidden_horde --;
                             points += 100;
-                            cout << "You've earned 100 points!\n\n";
+                            cout << "Congradulations, you've earned 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                             cout << string(width_of_panel, '=') << endl;
+                            answering_q5 = false;
                             break;
     
                         case 5:
+                            cout << "The correct answer was Illidan Stormrage.\n";
                             cout << "HEY THE ONLY THING MY WARRIOR BETRAYED WAS NOT MAKING IT TO GLADIATOR...\n";
+                            cout << "This was the actual name and title of my warrior, listen I used to have a lot more time on my hands.\n";
                             hidden_horde++;
                             hidden_alliance--;
                             points -= 100;
                             cout << "You've earned 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                             cout << string(width_of_panel, '=') << endl;
+                            answering_q5 = false;
                             break;
     
                         default:
@@ -642,7 +687,7 @@ int main()
                     }//end of while loop/switch
                 } // end of question 5 put question 6 here
 
-                while(answering_q6 == true)
+                while(answering_q6 == true) //happy with 6
                 {
                     cout << WARCRAFT_TRIVIA_QUESTION_6;
                     cout << "1. Naxxramas.\n";
@@ -654,9 +699,10 @@ int main()
                     cout << string(width_of_panel, '=') << endl;
                     
     
-                    switch (answer_2_question_6)
+                    switch (answer_2_question_6) //happy with 6
                     { // switch for question 6 choices.
                         case 1:
+                            cout << "The correct answer was Icecrown Citadel.\n";
                             cout << "We dont defeat Arthas/The Lich King here.\n";
                             cout << "Instead we \"Defeat\" Kel Thuzad and he returns to his phylactery ";
                             cout << "However with that being said" << contestants_name << ", sorry but thats incorrect...\n";
@@ -670,6 +716,7 @@ int main()
                             break;
     
                         case 2:
+                            cout << "The correct answer was Icecrown Citadel.\n";
                             cout << "This is the raid where we defeat Yogg-Saron, Not The Litch King.\n";
                             cout << "sorry but thats incorrect...\n";
                             hidden_alliance--;
@@ -677,6 +724,7 @@ int main()
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
                             answering_q6 = false;
                             break;
                             
@@ -695,10 +743,12 @@ int main()
                             points += 100;
                             cout << "You've earned 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
                             answering_q6 = false;
                             break;
     
                         case 4:
+                            cout << "The correct answer was Icecrown Citadel.\n";
                             cout << "He makes a brief apperance here but we do not defeat him at this time.\n";
                             cout << "Sorry but youve chosen the wrong answer.\n";
                             hidden_alliance--;
@@ -706,10 +756,12 @@ int main()
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
                             answering_q6 = false;
                             break;
     
                         case 5:
+                            cout << "The correct answer was Icecrown Citadel.\n";
                             cout << "Thats not the raid hes in, just the city he burned to the ground...\n";
                             cout << "Sorry but youve chosen the wrong answer.";
                             hidden_alliance--;
@@ -717,247 +769,367 @@ int main()
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
                             answering_q6 = false;
                             break;
     
                         default:
+                            cout << string(width_of_panel, '=') << endl;
                             cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
                             break;
                     }
                 } // end of question 6 put question 7 here
 
-                cout << WARCRAFT_TRIVIA_QUESTION_7;
-                cout << "1. Red Dragonflight.\n";
-                cout << "2. Blue Dragonflight.\n";
-                cout << "3. Bronze Dragonflight.\n";
-                cout << "4. Black Dragonflight.\n";
-                cout << "5. Green Dragonflight\n\n";
-                cin >> answer_2_question_7;
-
-                switch (answer_2_question_7)
-                { // switch for question 7 choices.
-                    case 1:
-                        cout << "sorry but thats incorrect due to being the wrong Dragonflight.\n";
-                        cout << "Ysera, the Dreamer is the leader of the Green Dragon Flight.\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 2:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 3:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 4:
-                        cout << "sorry but thats... Wait no thats correct, nevermind!\n";
-                        hidden_alliance++;
-                        hidden_horde--;
-                        points += 100;
-                        cout << "You've earned 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 5:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
-                        break;
+                while(answering_q7 == true) // happy with 7
+                {
+                    cout << WARCRAFT_TRIVIA_QUESTION_7;
+                    cout << "1. Red Dragonflight.\n";
+                    cout << "2. Blue Dragonflight.\n";
+                    cout << "3. Bronze Dragonflight.\n";
+                    cout << "4. Black Dragonflight.\n";
+                    cout << "5. Green Dragonflight\n\n";
+                    cin >> answer_2_question_7;
+                    cout << string(width_of_panel, '=') << endl;
+    
+                    switch (answer_2_question_7)
+                    { // switch for question 7 choices.
+                        case 1:
+                            cout << "The correct answer was Black Dragonflight.\n";
+                            cout << "sorry but thats incorrect due to being the wrong Dragonflight.\n";
+                            cout << "Alexstrasza the Life-Binder, is the leader of the Red Dragonflight\n";
+                            cout << "Deathwing was the leader of the Black Dragonflight!.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q7 = false;
+                            break;
+    
+                        case 2:
+                            cout << "The correct answer was Black Dragonflight.\n";
+                            cout << "sorry but thats incorrect due to being the wrong Dragonflight.\n";
+                            cout << "Kalecgos is the Aspect of the blue dragonflight.\n";
+                            cout << "Deathwing was the leader of the Black Dragonflight!.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q7 = false;
+                            break;
+    
+                        case 3:
+                            cout << "The correct answer was Black Dragonflight.\n";
+                            cout << "sorry but thats incorrect due to being the wrong Dragonflight.\n";
+                            cout << "Nozdormu the Timeless One, is the aspect of the Bronze Dragonflight\n";
+                            cout << "Deathwing was the leader of the Black Dragonflight!.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q7 = false;
+                            break;
+    
+                        case 4:
+                            cout << "Thats correct! Deathwing was the leader of the Black Dragonflight!.\n";
+                            hidden_alliance++;
+                            hidden_horde--;
+                            points += 100;
+                            cout << "You've earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q7 = false;
+                            break;
+    
+                        case 5:
+                            cout << "The correct answer was Black Dragonflight.\n";
+                            cout << "sorry but thats incorrect due to being the wrong Dragonflight.\n";
+                            cout << "Ysera, the Dreamer is the leader of the Green Dragon Flight.\n";
+                            cout << "Deathwing was the leader of the Black Dragonflight!.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q7 = false;
+                            break;
+    
+                        default:
+                            
+                            cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            
+                            break;
+                    }//end of while loop
                 } // end of question 7 put question 8 here
 
-                cout << WARCRAFT_TRIVIA_QUESTION_8;
-                cout << "1. Kil'jaeden.\n";
-                cout << "2. Archimonde.\n";
-                cout << "3. Gul'dan.\n";
-                cout << "4. Sargeras.\n";
-                cout << "5. Arthas Menethil\n\n";
-                cin >> answer_2_question_8;
-
-                switch (answer_2_question_8)
-                { // switch for question 8 choices.
-                    case 1:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 2:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 3:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 4:
-                        cout << "sorry but thats... Wait no thats correct, nevermind!\n";
-                        hidden_alliance++;
-                        hidden_horde--;
-                        points += 100;
-                        cout << "You've earned 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 5:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
-                        break;
+                while (answering_q8 == true) // Question 8
+                {
+                    cout << WARCRAFT_TRIVIA_QUESTION_8;
+                    cout << "1. Kil'jaeden.\n";
+                    cout << "2. Archimonde.\n";
+                    cout << "3. Gul'dan.\n";
+                    cout << "4. Sargeras.\n";
+                    cout << "5. Arthas Menethil\n\n";
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_question_8;
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_question_8)
+                    {
+                        case 1:
+                            cout << "The correct answer was Sargeras.\n";
+                            cout << "Kil'jaeden? Close... VERY close actually.\n";
+                            cout << "He was one of my most powerful servants after joining the Burning Legion,\n";
+                            cout << "but he wasnt the Titan who started this whole mess.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q8 = false;
+                            break;
+                
+                        case 2:
+                            cout << "The correct answer was Sargeras.\n";
+                            cout << "Archimonde was powerful, I'll give you that...\n";
+                            cout << "But he worked FOR the Burning Legion. He didnt create it.\n";
+                            cout << "Sadly thats incorrect.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q8 = false;
+                            break;
+                
+                        case 3:
+                            cout << "The correct answer was Sargeras.\n";
+                            cout << "Gul'dan?! The Orc warlock?\n";
+                            cout << "Listen, he caused A LOT of problems, but Titan is definitely not on his resume.\n";
+                            cout << "Sadly thats incorrect.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q8 = false;
+                            break;
+                
+                        case 4:
+                            cout << "SARGERAS! Thats correct!\n";
+                            cout << "Wait... you remembered the name of the guy HOSTING THIS TRIVIA GAME?\n";
+                            cout << "Im actually impressed.\n";
+                            hidden_alliance++;
+                            hidden_horde--;
+                            points += 100;
+                            cout << "You've earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q8 = false;
+                            break;
+                
+                        case 5:
+                            cout << "The correct answer was Sargeras.\n";
+                            cout << "Arthas Menethil? No no no... wrong evil guy.\n";
+                            cout << "He became the Lich King. He did NOT lead the Burning Legion.\n";
+                            cout << "There are too many corrupted people in this game, I understand the confusion.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q8 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of question 8 put question 9 here
-
-                cout << WARCRAFT_TRIVIA_QUESTION_9;
-                cout << "1. Ironforge.\n";
-                cout << "2. Stormwind City.\n";
-                cout << "3. Lordaeron.\n";
-                cout << "4. Gilneas.\n";
-                cout << "5. Orgrimmar\n\n";
-                cin >> answer_2_question_9;
-
-                switch (answer_2_question_9)
-                { // switch for question 9 choices.
-                    case 1:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 2:
-                        cout << "sorry but thats... Wait no thats correct, nevermind!\n";
-                        hidden_alliance++;
-                        points += 100;
-                        cout << "You've earned 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 3:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 4:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 5:
-                        cout << "We went over this earlier...\n";
-                        cout << "This is the Horde capital! but I know why you picked this one.\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
-                        break;
+                
+                
+                while (answering_q9 == true) // Question 9
+                {
+                    cout << WARCRAFT_TRIVIA_QUESTION_9;
+                    cout << "1. Ironforge.\n";
+                    cout << "2. Stormwind City.\n";
+                    cout << "3. Lordaeron.\n";
+                    cout << "4. Gilneas.\n";
+                    cout << "5. Orgrimmar\n\n";
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_question_9;
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_question_9)
+                    {
+                        case 1:
+                            cout << "The correct answer was Stormwind City.\n";
+                            cout << "Ironforge is an Alliance capital, so at least youre in the right neighborhood...\n";
+                            cout << "Unfortunately its the Dwarven capital, not Stormwind's.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q9 = false;
+                            break;
+                
+                        case 2:
+                            cout << "Stormwind City! Thats correct!\n";
+                            cout << "The question practically gave you the answer, but hey, 100 points is 100 points.\n";
+                            hidden_alliance++;
+                            points += 100;
+                            cout << "You've earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q9 = false;
+                            break;
+                
+                        case 3:
+                            cout << "The correct answer was Stormwind City.\n";
+                            cout << "Lordaeron was a human kingdom, but it definitely isnt Stormwind.\n";
+                            cout << "Keep that name in mind though... You MIGHT need it very soon.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q9 = false;
+                            break;
+                
+                        case 4:
+                            cout << "The correct answer was Stormwind City.\n";
+                            cout << "Gilneas is another human kingdom, but thats not the one I asked for.\n";
+                            cout << "Greymane would probably be happy you remembered them though.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q9 = false;
+                            break;
+                
+                        case 5:
+                            cout << "The correct answer was Stormwind City.\n";
+                            cout << "We went over this earlier...\n";
+                            cout << "ORGRIMMAR IS THE HORDE CAPITAL!\n";
+                            cout << "You have somehow answered an Alliance question with the most Horde answer possible.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q9 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of question 9 put question 10 here
-
-                cout << WARCRAFT_TRIVIA_QUESTION_10;
-                cout << "1. Stormwind.\n";
-                cout << "2. Gilneas.\n";
-                cout << "3. Alterac.\n";
-                cout << "4. Lordaeron.\n";
-                cout << "5. Icecrown Citadel\n\n";
-                cin >> answer_2_question_10;
-
-                switch (answer_2_question_10)
-                { // switch for question 10 choices.
-                    case 1:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 2:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 3:
-                        cout << "sorry but thats incorrect...\n";
-                        hidden_alliance--;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 4:
-                        cout << "sorry but thats... Wait no thats correct, nevermind!\n";
-                        hidden_alliance++;
-                        points += 100;
-                        cout << "You've earned 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    case 5:
-                        cout << "I... Thats not a city, but the raid he was defeated in while he was the Lich King.\n";
-                        hidden_alliance--;
-                        hidden_horde++;
-                        points -= 100;
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
-                        break;
+                
+                
+                while (answering_q10 == true) // Question 10
+                {
+                    cout << WARCRAFT_TRIVIA_QUESTION_10;
+                    cout << "1. Stormwind.\n";
+                    cout << "2. Gilneas.\n";
+                    cout << "3. Alterac.\n";
+                    cout << "4. Lordaeron.\n";
+                    cout << "5. Icecrown Citadel\n\n";
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_question_10;
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_question_10)
+                    {
+                        case 1:
+                            cout << "The correct answer was Lordaeron.\n";
+                            cout << "Stormwind? Wrong human kingdom.\n";
+                            cout << "Arthas was a prince, but definitely not Prince of Stormwind.\n";
+                            cout << "Sorry, thats incorrect.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q10 = false;
+                            break;
+                
+                        case 2:
+                            cout << "The correct answer was Lordaeron.\n";
+                            cout << "Gilneas? Nope.\n";
+                            cout << "Different kingdom, different prince, substantially fewer cursed swords involved.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q10 = false;
+                            break;
+                
+                        case 3:
+                            cout << "The correct answer was Lordaeron.\n";
+                            cout << "Alterac is another human kingdom, but Arthas wasnt its prince.\n";
+                            cout << "Sadly thats incorrect.\n";
+                            hidden_alliance--;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q10 = false;
+                            break;
+                
+                        case 4:
+                            cout << "LORDAERON! Thats correct!\n";
+                            cout << "Arthas Menethil was the Prince of Lordaeron before everything went...\n";
+                            cout << "well... EXTREMELY poorly.\n";
+                            hidden_alliance++;
+                            points += 100;
+                            cout << "You've earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q10 = false;
+                            break;
+                
+                        case 5:
+                            cout << "The correct answer was Lordaeron.\n";
+                            cout << "I... Thats not even a kingdom.\n";
+                            cout << "Icecrown Citadel is where we eventually fight Arthas AS the Lich King.\n";
+                            cout << "You were several years and one very cursed sword too late with that answer.\n";
+                            hidden_alliance--;
+                            hidden_horde++;
+                            points -= 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q10 = false;
+                            break;
+                
+                        default:
+                            cout << string(width_of_panel, '=') << endl;
+                            cout << "Please Give and answer using 1,2,3,4 or 5 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of question 10
 
                 break;
@@ -1463,6 +1635,24 @@ int main()
         // This is the loop to see if the user wants to replay the game.
         while (valid_restart_answer == false)
         {
+            cout << "\n";
+            cout << string(width_of_panel, '=') << endl;
+            cout << "TRIVIA COMPLETE!\n";
+            cout << contestants_name << "'s FINAL SCORE: " << points << endl;
+            cout << string(width_of_panel, '=') << endl;
+            cout << "We were also trying to help you decided which faction to join for the release of\n";
+            cout << "WoW Forever!\n";
+            cout << "Which ever faction you scored higher on is the one we give you!\n";
+            if (hidden_alliance > hidden_horde) 
+            {
+                cout << "We suggest that you join... The Alliance but the only race you can pick is a gnome...\n\n";
+            }
+            else 
+            {
+                cout << "Welcome to the horde, we have undead, trolls, ORCS, and Taurens!\n\n";
+            }
+
+            
             cout << "Do you want to play the game again? (yes/no): ";
             cin >> playing_trivia_restart;
 
