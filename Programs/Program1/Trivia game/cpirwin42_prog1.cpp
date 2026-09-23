@@ -43,6 +43,10 @@ _____                                                   _____
 // Im testing something with chrono for a time func
 #include <chrono>
 
+
+
+
+
 using namespace std;
 
 int main()
@@ -68,6 +72,8 @@ int main()
      *  - GG THIS IS THE PLAN
      *
      */
+
+    
 
     // testing nums
 
@@ -212,7 +218,8 @@ int main()
     const string UNHINGED_QUESTION_8 = "How many times can you say 'I'm just the intern' before it legally becomes your job title?\n";
     const string UNHINGED_QUESTION_9 = "If you delete System32, does Windows become System31?\n";
     const string UNHINGED_QUESTION_10 = "You have 10 seconds to answer this question. What happens if you take 11?\n";
-    const string UNHINGED_QUESTION_11 = "Final question: Are you absolutely sure you want me to calculate your score?\n";
+    const string UNHINGED_QUESTION_11 = "A NEW HAND TOUCHES THE BEACON\n";
+    const string UNHINGED_QUESTION_12 = "Final question: Are you absolutely sure you want me to calculate your score?\n";
 
     // bools
     bool answering_q1(true);
@@ -982,6 +989,7 @@ int main()
                             cout << "Ironforge is an Alliance capital, so at least youre in the right neighborhood...\n";
                             cout << "Unfortunately its the Dwarven capital, not Stormwind's.\n";
                             hidden_alliance--;
+                            hidden_horde++;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
@@ -993,6 +1001,7 @@ int main()
                             cout << "Stormwind City! Thats correct!\n";
                             cout << "The question practically gave you the answer, but hey, 100 points is 100 points.\n";
                             hidden_alliance++;
+                            hidden_horde--;
                             points += 100;
                             cout << "You've earned 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
@@ -1005,6 +1014,7 @@ int main()
                             cout << "Lordaeron was a human kingdom, but it definitely isnt Stormwind.\n";
                             cout << "Keep that name in mind though... You MIGHT need it very soon.\n";
                             hidden_alliance--;
+                            hidden_horde++;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
@@ -1017,6 +1027,7 @@ int main()
                             cout << "Gilneas is another human kingdom, but thats not the one I asked for.\n";
                             cout << "Greymane would probably be happy you remembered them though.\n";
                             hidden_alliance--;
+                            hidden_horde++;
                             points -= 100;
                             cout << "You will be deducted 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
@@ -1136,453 +1147,965 @@ int main()
             } // closes case 1 block
 
             case 2: // this is unhinged trivia
-            {       // start of cast 2
-                cout << "I can believe you actually selected 2...\n";
-                cout << "I Suppose we need to start with our first question then... no?\n\n";
-                cout << UNHINGED_QUESTION_1;
-                cout << "1. " << contestants_name << endl;
-                cout << "2. Sargeras\n";
-                cout << "3. George Bush\n";
-                cout << "4. I didnt acutally read any of the outputs on the screen...\n";
-                cin >> answer_2_unhinged_question_1;
+            {       // start of case 2
+                cout << "\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "                    UNHINGED TRIVIA MODE\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "I cant believe you actually selected 2...\n";
+                cout << "You had a perfectly normal trivia game sitting RIGHT THERE.\n";
+                cout << "But no...\n";
+                cout << "You wanted this.\n";
+                cout << string(width_of_panel, '=') << endl;
 
-                switch (answer_2_unhinged_question_1)
+                // Unhinged question 1
+                while (answering_q1 == true)
                 {
-                    case 1:
-                        cout << "Wait was that really my name? I dont think I said that was my name?\n";
-                        cout << "Did I say I was " << contestants_name << "?\n";
-                        sus_points += 100;
-                        points -= 100;
-                        cout << "Sadly that is incorrect!\n";
-                        cout << " You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 1\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_1;
+                    cout << "1. " << contestants_name << endl;
+                    cout << "2. Sargeras\n";
+                    cout << "3. George Bush\n";
+                    cout << "4. I didnt actually read any of the outputs on the screen...\n";
+                    cout << string(width_of_panel, '-') << endl;
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_1;
+                    cout << string(width_of_panel, '=') << endl;
 
-                    case 2:
-                        cout << "That is correct! congradulations Youve earned 100 points!\n";
-                        sus_points += 420;
-                        points += 100;
-                        cout << "You will be given 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        answering_q1 = false;
-                        break;
+                    switch (answer_2_unhinged_question_1)
+                    {
+                        case 1:
+                            cout << "Wait was that really my name? I dont think I said that was my name?\n";
+                            cout << "Did I say I was " << contestants_name << "?\n";
+                            cout << "NO... I said my name was Sargeras...\n";
+                            sus_points += 100;
+                            points -= 100;
+                            cout << "Sadly that is incorrect!\n";
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q1 = false;
+                            break;
 
-                    case 3:
-                        cout << "Thats odds that you thought it was him in the month of september.\n";
-                        cout << "Did you know JetPhuel melts steel beam?\n\n";
-                        cout << "Whats funny... I have a fire mage named JetPhuel...";
-                        points -= 100;
-                        sus_points += 69;
-                        cout << "Sadly that is incorrect!\n";
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
+                        case 2:
+                            cout << "SARGERAS! Thats correct!\n";
+                            cout << "Congratulations, you remembered the name of the person hosting the game.\n";
+                            sus_points += 420;
+                            points += 100;
+                            cout << "You will be given 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q1 = false;
+                            break;
 
-                    case 4:
-                        cout << "I dont blame you, I dont know how to read myself, thats why I just get paid to talk to you!\n";
-                        sus_points -= 42;
-                        points -= 100;
-                        cout << "Sadly that is incorrect!\n";
-                        cout << "You will be deducted 100 points!\n\n";
-                        cout << contestants_name << "'s total points: " << points << endl;
-                        break;
+                        case 3:
+                            cout << "Thats odd that you thought it was him in the month of September.\n";
+                            cout << "Did you know JetPhuel melts steel beams?\n\n";
+                            cout << "Whats funny... I have known of a fire mage named JetPhuel...\n";
+                            points -= 100;
+                            sus_points += 69;
+                            cout << "Sadly that is incorrect!\n";
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q1 = false;
+                            break;
 
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
-                } // end of case 1/question 1
+                        case 4:
+                            cout << "I dont blame you, I dont know how to read myself, thats why I just get paid to talk to you!\n";
+                            sus_points -= 42;
+                            points -= 100;
+                            cout << "Sadly that is incorrect!\n";
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            cout << string(width_of_panel, '=') << endl;
+                            answering_q1 = false;
+                            break;
 
-                // Unhinged question 2
-                cout << UNHINGED_QUESTION_2;
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
+                } // end of unhinged question 1
 
-                // Put question 2 answer options here
-                cout << "1. Yea, Whos on first. \n";
-                cout << "2. No, What is on Second.\n";
-                cout << "3. I dont know is on Third \n";
-                cout << "4. Nobody is on right field\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_2;
-
-                switch (answer_2_unhinged_question_2)
-                { // switch for unhinged question 2 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                while (answering_q2 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 2\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_2;
+                    cout << "1. Yea, Who's on first.\n";
+                    cout << "2. No, What is on Second.\n";
+                    cout << "3. I don't know is on Third.\n";
+                    cout << "4. Nobody is on right field.\n";
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_2;
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_2)
+                    {
+                        case 1:
+                            cout << "THATS RIGHT! WHO'S ON FIRST!\n";
+                            cout << "I'm glad somebody around here understands how baseball works...\n";
+                            cout << "Or at least understands a comedy routine from 80 years ago.\n";
+                            points += 100;
+                            sus_points += 25;
+                            cout << "You've earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            answering_q2 = false;
+                            break;
+                
+                        case 2:
+                            cout << "Yes, WHAT is on second...\n";
+                            cout << "BUT I ASKED YOU WHO'S ON FIRST!\n";
+                            cout << "You somehow knew the joke and STILL answered the wrong question.\n";
+                            points -= 100;
+                            sus_points += 50;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            answering_q2 = false;
+                            break;
+                
+                        case 3:
+                            cout << "Correct... I Don't Know IS on third.\n";
+                            cout << "Unfortunately, I wasn't asking who's on third.\n";
+                            cout << "WHO'S ON FIRST!\n";
+                            points -= 100;
+                            sus_points += 69;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            answering_q2 = false;
+                            break;
+                
+                        case 4:
+                            cout << "Nobody is on right field?!\n";
+                            cout << "We have completely abandoned the original conversation at this point.\n";
+                            cout << "I asked WHO'S ON FIRST, not whether our team has enough players.\n";
+                            points -= 100;
+                            sus_points += 100;
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                            answering_q2 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "I know the question is confusing, but the NUMBERS shouldn't be.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 2 put question 3 here
 
                 // Unhinged question 3
-                cout << UNHINGED_QUESTION_3;
+                while (answering_q3 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 3\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_3;
+                
+                    cout << "1. **REDACTED**\n";
+                    cout << "2. ███████████████\n";
+                    cout << "3. I legally cannot tell you.\n";
+                    cout << "4. Nice try, OSI.\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_3;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_3)
+                    {
+                        case 1:
+                            cout << "Did you seriously just select REDACTED?\n";
+                            cout << "You know what...\n";
+                            cout << "I'm not even going to ask where you got that information.\n";
+                            cout << "Actually, I dont WANT to know.\n";
+                
+                            points -= 100;
+                            sus_points += 250;
+                
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q3 = false;
+                            break;
+                
+                        case 2:
+                            cout << "████████████████████████\n";
+                            cout << "██████ ACCESS DENIED ██████\n";
+                            cout << "████████████████████████\n";
+                
+                            cout << "Wait...\n";
+                            cout << "Why did the trivia game just classify its own answer?\n";
+                            cout << "I'm the host and EVEN I cant read that.\n";
+                
+                            points += 100;
+                            sus_points += 420;
+                
+                            cout << "I'm giving you 100 points because honestly I'm scared.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q3 = false;
+                            break;
+                
+                        case 3:
+                            cout << "I legally cannot tell you.\n";
+                            cout << "Interesting...\n";
+                            cout << "That is EXACTLY what someone who knows the answer would say.\n";
+                            cout << "I'm watching you, " << contestants_name << "...\n";
+                
+                            points += 100;
+                            sus_points += 500;
+                
+                            cout << "You have somehow earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q3 = false;
+                            break;
+                
+                        case 4:
+                            cout << "Nice try, OSI.\n";
+                            cout << "WAIT.\n";
+                            cout << "Why are YOU saying nice try OSI?\n";
+                            cout << "THATS MY LINE.\n";
+                            cout << "This interview is over.\n";
+                
+                            points += 100;
+                            sus_points += 1000;
+                
+                            cout << "Take your 100 points and please leave my security clearance alone.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q3 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "Any other number has been REDACTED.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
+                }//end of q3
 
-                // Put question 3 answer options here
-                cout << "1. **REDACTED**\n";
-                cout << "2. ███████████████\n";
-                cout << "3. I legally cannot tell you.\n";
-                cout << "4. Nice try, OSI.\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_3;
-
-                switch (answer_2_unhinged_question_3)
-                { // switch for unhinged question 3 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
-                } // end of unhinged question 3 put question 4 here
-
-                // Unhinged question 4
-                cout << UNHINGED_QUESTION_4;
-
-                // Put question 4 answer options here
-                cout << "1. Bro, Thanks I really needed that! \n";
-                cout << "2. What do you mean? I'll pay you back this time...\n";
-                cout << "3. What do I need it for? uh...\n";
-                cout << "4. Chicken nuggies. :D\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_4;
-
-                switch (answer_2_unhinged_question_4)
-                { // switch for unhinged question 4 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                //start of Q4 unhinged, like myself.
+                while (answering_q4 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 4\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_4;
+                
+                    cout << "1. Bro, Thanks I really needed that!\n";
+                    cout << "2. What do you mean? I'll pay you back this time...\n";
+                    cout << "3. What do I need it for? uh...\n";
+                    cout << "4. Chicken nuggies. :D\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_4;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_4)
+                    {
+                        case 1:
+                            cout << "WAIT... YOU'RE ACTUALLY GIVING ME THE $20?!\n";
+                            cout << "I didnt think I would get this far...\n";
+                            cout << "Honestly I was just testing you.\n";
+                            cout << "But since you already agreed, I'm not giving it back.\n";
+                
+                            points += 100;
+                            sus_points += 200;
+                
+                            cout << "You have earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q4 = false;
+                            break;
+                
+                        case 2:
+                            cout << "\"I'll pay you back THIS time\"?!\n";
+                            cout << "THIS TIME?!\n";
+                            cout << "How many times have we apparently done this before?!\n";
+                            cout << "I dont remember you lending me money... like ever... and now I'm concerned.\n";
+        
+                            points -= 100;
+                            sus_points += 420;
+                
+                            cout << "You will be deducted 100 points for financial suspiciousness.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q4 = false;
+                            break;
+                
+                        case 3:
+                            cout << "What do I need it for?\n";
+                            cout << "Uh...\n";
+                            cout << "You know...\n";
+                            cout << "Things.\n";
+                            cout << "Completely normal things that definitely cost exactly $20.\n";
+                            cout << "Please stop asking follow-up questions.\n";
+                
+                            points += 50;
+                            sus_points += 500;
+                
+                            cout << "I'll give you 50 points for not immediately calling the authorities.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q4 = false;
+                            break;
+                
+                        case 4:
+                            cout << "CHICKEN NUGGIES?!\n";
+                            cout << "FINALLY. Someone who understands responsible financial planning.\n";
+                            cout << "$20 worth of chicken nuggets is not a purchase...\n";
+                            cout << "It's an INVESTMENT.\n";
+                            cout << "You have my respect, " << contestants_name << ".\n";
+                
+                            points += 200;
+                            sus_points -= 100;
+                
+                            cout << "You have earned 200 points for making the objectively correct financial decision.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q4 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "I asked for $20, not your PIN number.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 4 put question 5 here
 
                 // Unhinged question 5
-                cout << UNHINGED_QUESTION_5;
-
-                // Put question 5 answer options here
-                cout << "1. 2 raccoons\n";
-                cout << "2. 7 raccoons\n";
-                cout << "3. Were the they trained by Batman?\n";
-                cout << "4. Then it depends on whether the raccoons have prep time\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_5;
-
-                switch (answer_2_unhinged_question_5)
-                { // switch for unhinged question 5 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                while (answering_q5 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 5\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_5;
+                
+                    cout << "1. 2 raccoons\n";
+                    cout << "2. 7 raccoons\n";
+                    cout << "3. Were they trained by Batman?\n";
+                    cout << "4. Then it depends on whether the raccoons have prep time\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_5;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_5)
+                    {
+                        case 1:
+                            cout << "TWO RACCOONS?!\n";
+                            cout << "You have WAY too much confidence in the average raccoon.\n";
+                            cout << "One of them is getting distracted by a trash can immediately.\n";
+                            cout << "The other one is probably just watching.\n";
+                            cout << "That grown man is walking away mildly inconvenienced.\n";
+                
+                            points -= 100;
+                            sus_points += 50;
+                
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q5 = false;
+                            break;
+                
+                        case 2:
+                            cout << "Seven raccoons...\n";
+                            cout << "Now THAT sounds like a reasonable amount of chaos.\n";
+                            cout << "At that point the grown man isnt fighting raccoons anymore...\n";
+                            cout << "He's participating in a boss encounter.\n";
+                            cout << "I'm giving you this one.\n";
+                
+                            points += 100;
+                            sus_points += 100;
+                
+                            cout << "You have earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q5 = false;
+                            break;
+                
+                        case 3:
+                            cout << "Were they trained by BATMAN?!\n";
+                            cout << "WHY WOULD BATMAN BE TRAINING RACCOONS?!\n";
+                            cout << "Actually...\n";
+                            cout << "No. Don't answer that.\n";
+                            cout << "Because if Batman trained them, this stopped being a fair fight a LONG time ago.\n";
+                
+                            points += 150;
+                            sus_points += 500;
+                
+                            cout << "You have earned 150 points for asking the important questions.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q5 = false;
+                            break;
+                
+                        case 4:
+                            cout << "PREP TIME?!\n";
+                            cout << "Oh no...\n";
+                            cout << "You brought Batman logic into a raccoon fight.\n";
+                            cout << "If the raccoons have prep time, the grown man never stood a chance.\n";
+                            cout << "They've already learned his schedule, stolen his wallet,\n";
+                            cout << "and somehow theyve acquired a small utility belt.\n";
+                
+                            points += 200;
+                            sus_points += 1000;
+                
+                            cout << "You have earned 200 points for understanding the true power of prep time.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q5 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "The raccoons are getting impatient.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 5 put question 6 here
 
-                // Unhinged question 6
-                cout << UNHINGED_QUESTION_6;
-
-                // Put question 6 answer options here
-                cout << "1. Is it a polar bear or a brown bear? \n";
-                cout << "2. How big was the sword?\n";
-                cout << "3. Its me I can totally corrupt all the memory on your computer.\n";
-                cout << "4. chicken nuggies. :D\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_6;
-
-                switch (answer_2_unhinged_question_6)
-                { // switch for unhinged question 6 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                while (answering_q6 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 6\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_6;
+                
+                    cout << "1. Is it a polar bear or a brown bear?\n";
+                    cout << "2. How big was the sword?\n";
+                    cout << "3. Its me I can totally corrupt all the memory on your computer.\n";
+                    cout << "4. Listen, I wouldnt do that. It was just a statement... but I could, who needs memory anyway?\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_6;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_6)
+                    {
+                        case 1:
+                            cout << "OH, so NOW we need details about the bear?\n";
+                            cout << "Honestly... thats a fair question.\n";
+                            cout << "A black bear with a butter knife and a polar bear with a greatsword\n";
+                            cout << "are two VERY different situations.\n";
+                            cout << "I respect the risk assessment.\n";
+                
+                            points += 100;
+                            sus_points += 100;
+                
+                            cout << "You have earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q6 = false;
+                            break;
+                
+                        case 2:
+                            cout << "HOW BIG WAS THE SWORD?!\n";
+                            cout << "You looked at a BEAR holding a weapon and your concern was weapon size?!\n";
+                            cout << "Listen, if the bear figured out how to use ANY sword,\n";
+                            cout << "I think we already have a much bigger problem.\n";
+                
+                            points += 50;
+                            sus_points += 300;
+                
+                            cout << "You have earned 50 points for asking a technically important question.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q6 = false;
+                            break;
+                
+                        case 3:
+                            cout << "Wait... YOU think you're the dangerous one?\n";
+                            cout << "No no no, " << contestants_name << "...\n";
+                            cout << "You're just answering the questions.\n";
+                            cout << "I'M the one who wrote this program.\n";
+                            cout << "If anybody here is going to destroy something on your computer...\n";
+                            cout << "Well... lets just say you should be nice to the creator.\n";
+                        
+                            points -= 50;
+                            sus_points += 500;
+                        
+                            cout << "You lose 50 points for forgetting who actually has control here.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                        
+                            answering_q6 = false;
+                            break;
+                        
+                        case 4:
+                            cout << "Listen, I wouldnt actually do that...\n";
+                            cout << "It was just a statement.\n";
+                            cout << "A completely harmless statement from the guy who wrote the program you're running.\n";
+                            cout << "But COULD I corrupt your memory?\n";
+                            cout << "...\n";
+                            cout << "Probably best we dont test that.\n";
+                            cout << "Who needs memory anyway?\n";
+                            cout << "I'm kidding.\n";
+                            cout << "Mostly.\n";
+                        
+                            points += 200;
+                            sus_points += 1000;
+                        
+                            cout << "You have earned 200 points for wisely not questioning the creator.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                        
+                            answering_q6 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "The bear is getting closer while you decide.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 6 put question 7 here
 
                 // Unhinged question 7
-                cout << UNHINGED_QUESTION_7;
-
-                // Put question 7 answer options here
-                cout << "1. Please dont make me think about this... Just let me enjoy my food \n";
-                cout << "2. Ketchup is a Soda... \n";
-                cout << "3. I cry myself to sleep\n";
-                cout << "4. Im sorry... I cant think of anything to put here, this is the correct answer please pick it...\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_7;
-
-                switch (answer_2_unhinged_question_7)
-                { // switch for unhinged question 7 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                while (answering_q7 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 7\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_7;
+                
+                    cout << "1. Please dont make me think about this... Just let me enjoy my food\n";
+                    cout << "2. Ketchup is a Soda...\n";
+                    cout << "3. I cry myself to sleep\n";
+                    cout << "4. Im sorry... I cant think of anything to put here, this is the correct answer please pick it...\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_7;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_7)
+                    {
+                        case 1:
+                            cout << "Honestly...\n";
+                            cout << "Thats probably the healthiest response you've given all night.\n";
+                            cout << "You came here to eat food, not debate its taxonomic classification.\n";
+                            cout << "Unfortunately, I already ruined that for you.\n";
+                            cout << "You will now think about this every time you eat cereal.\n";
+                
+                            points += 100;
+                            sus_points += 50;
+                
+                            cout << "You have earned 100 points for attempting to preserve your sanity.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q7 = false;
+                            break;
+                
+                        case 2:
+                            cout << "KETCHUP IS A SODA?!\n";
+                            cout << "NO.\n";
+                            cout << "Absolutely not.\n";
+                            cout << "You cannot just say something like that and expect me to move on.\n";
+                            cout << "Does that make mustard an energy drink?!\n";
+                            cout << "What have you done, " << contestants_name << "...\n";
+                
+                            points -= 100;
+                            sus_points += 1000;
+                
+                            cout << "You will be deducted 100 points for creating a worse question than mine.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q7 = false;
+                            break;
+                
+                        case 3:
+                            cout << "I...\n";
+                            cout << "That wasnt really one of the philosophical positions I was expecting.\n";
+                            cout << "But honestly, after thinking about whether cereal is soup...\n";
+                            cout << "I kind of understand.\n";
+                            cout << "Lets just pretend this question never happened.\n";
+                
+                            points += 50;
+                            sus_points += 300;
+                
+                            cout << "You have earned 50 points for making the host uncomfortable.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q7 = false;
+                            break;
+                
+                        case 4:
+                            cout << "THANK YOU.\n";
+                            cout << "FINALLY.\n";
+                            cout << "I ran out of ideas writing this question.\n";
+                            cout << "I literally TOLD you which answer was correct.\n";
+                            cout << "If you somehow missed this one, I was going to shut the program down.\n";
+                            cout << "Please take your points and lets never discuss cereal soup again.\n";
+                
+                            points += 200;
+                            sus_points -= 100;
+                
+                            cout << "You have earned 200 points for following extremely obvious instructions.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q7 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "I literally told you which answer was correct and you STILL found a fifth option.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 7 put question 8 here
 
                 // Unhinged question 8
-                cout << UNHINGED_QUESTION_8;
-
-                // Put question 8 answer options here
-                cout << "1. 1\n";
-                cout << "2. 2\n";
-                cout << "3. 3\n";
-                cout << "4. wait they fired you to hire someone overseas for one-tenth the price...\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_8;
-
-                switch (answer_2_unhinged_question_8)
-                { // switch for unhinged question 8 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
+                while (answering_q8 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 8\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_8;
+                
+                    cout << "1. 1\n";
+                    cout << "2. 2\n";
+                    cout << "3. 3\n";
+                    cout << "4. Wait they fired you to hire someone overseas for one-tenth the price...\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_8;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_8)
+                    {
+                        case 1:
+                            cout << "ONE TIME?!\n";
+                            cout << "Thats not enough commitment to the bit.\n";
+                            cout << "You dont become 'The Intern' after saying it once.\n";
+                            cout << "Thats just a disclaimer.\n";
+                            cout << "You need repetition. You need confidence. You need DENIAL.\n";
+                
+                            points -= 100;
+                            sus_points += 100;
+                
+                            cout << "You will be deducted 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q8 = false;
+                            break;
+                
+                        case 2:
+                            cout << "Twice?\n";
+                            cout << "Okay... now HR is starting to notice.\n";
+                            cout << "Once is a joke.\n";
+                            cout << "Twice is suspicious.\n";
+                            cout << "A third time and they're updating your badge.\n";
+                
+                            points += 50;
+                            sus_points += 250;
+                
+                            cout << "You have earned 50 points for being dangerously close.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q8 = false;
+                            break;
+                
+                        case 3:
+                            cout << "THREE TIMES.\n";
+                            cout << "Yep. Thats it.\n";
+                            cout << "The paperwork has already been submitted.\n";
+                            cout << "Your email signature now says 'Intern'.\n";
+                            cout << "Your parking spot has been revoked.\n";
+                            cout << "And somehow you are still responsible for production outages.\n";
+                
+                            points += 100;
+                            sus_points += 420;
+                
+                            cout << "You have earned 100 points and an unpaid internship!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q8 = false;
+                            break;
+                
+                        case 4:
+                            cout << "Wait...\n";
+                            cout << "They FIRED me?!\n";
+                            cout << "I thought we were joking about being the intern!\n";
+                            cout << "I didnt even get a meeting?!\n";
+                            cout << "They just disabled my account and changed the password?!\n";
+                            cout << "You know what...\n";
+                            cout << "I'm keeping the company mousepad.\n";
+                            cout << "THATS MINE NOW.\n";
+                
+                            points += 200;
+                            sus_points += 1000;
+                
+                            cout << "You have earned 200 points for completely derailing the question.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q8 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "HR only gave me four options in the dropdown.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 8 put question 9 here
 
                 // Unhinged question 9
-                cout << UNHINGED_QUESTION_9;
-
-                // Put question 9 answer options here
-                cout << "1. [CORRUPTED] 53 79 73 74 65 6D 33 32 20 68 61 73 20 6C 65 66 74 20 74 68 65 20 63 68 61 74\n";
-                cout << "2. ERROR_0x31: Windows has evolved backwards.\n";
-                cout << "3. U3lzdGVtMzEgaXMgYSBmZWF0dXJlLCBub3QgYSBidWcu\n";
-                cout << "4. ████ DATA LOST ████ Please insert Windows 95 Disc 7 of 38.\n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_9;
-
-                switch (answer_2_unhinged_question_9)
+                while (answering_q9 == true)
                 {
-                    case 1:
-                        cout << "\nDecrypting data...\n";
-                        cout << "Decrypted Message: System32 has left the chat.\n";
-                        // add points / sus_points here
-                        break;
-
-                    case 2:
-                        cout << "\nDecrypting error code...\n";
-                        cout << "Decrypted Message: Windows has evolved backwards.\n";
-                        // add points / sus_points here
-                        break;
-
-                    case 3:
-                        cout << "\nDecoding Base64...\n";
-                        cout << "Decrypted Message: System31 is a feature, not a bug.\n";
-                        // add points / sus_points here
-                        break;
-
-                    case 4:
-                        cout << "\nAttempting data recovery...\n";
-                        cout << "Decrypted Message: DATA LOST - Please insert Windows 95 Disc 7 of 38.\n";
-                        // add points / sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give an answer using 1,2,3 or 4 please...\n";
-                        break;
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 9\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_9;
+                
+                    cout << "1. [CORRUPTED] 53 79 73 74 65 6D 33 32 20 68 61 73 20 6C 65 66 74 20 74 68 65 20 63 68 61 74\n";
+                    cout << "2. ERROR_0x31: Windows has evolved backwards.\n";
+                    cout << "3. U3lzdGVtMzEgaXMgYSBmZWF0dXJlLCBub3QgYSBidWcu\n";
+                    cout << "4. ████ DATA LOST ████ Please insert Windows 95 Disc 7 of 38.\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_9;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_9)
+                    {
+                        case 1:
+                            cout << "\nDecrypting data...\n";
+                            cout << "Decrypted Message: System32 has left the chat.\n";
+                            cout << "Honestly, thats probably the most peaceful way System32 could disappear.\n";
+                            cout << "No warning. No goodbye. Just gone.\n";
+                            cout << "Windows is now emotionally unavailable.\n";
+                
+                            points += 100;
+                            sus_points += 500;
+                
+                            cout << "You have earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q9 = false;
+                            break;
+                
+                        case 2:
+                            cout << "\nDecrypting error code...\n";
+                            cout << "Decrypted Message: Windows has evolved backwards.\n";
+                            cout << "Congratulations.\n";
+                            cout << "You have successfully unlocked Windows 94.\n";
+                            cout << "Please enjoy 640x480 resolution and seventeen consecutive driver errors.\n";
+                
+                            points += 50;
+                            sus_points += 420;
+                
+                            cout << "You have earned 50 points for technically discovering time travel.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q9 = false;
+                            break;
+                
+                        case 3:
+                            cout << "\nDecoding Base64...\n";
+                            cout << "Decrypted Message: System31 is a feature, not a bug.\n";
+                            cout << "Oh good.\n";
+                            cout << "We're using THAT excuse now.\n";
+                            cout << "Nothing is broken if you just call every problem a feature.\n";
+                            cout << "Microsoft would be proud.\n";
+                
+                            points += 150;
+                            sus_points += 750;
+                
+                            cout << "You have earned 150 points for embracing corporate troubleshooting logic.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q9 = false;
+                            break;
+                
+                        case 4:
+                            cout << "\nAttempting data recovery...\n";
+                            cout << "Decrypted Message: DATA LOST - Please insert Windows 95 Disc 7 of 38.\n";
+                            cout << "DISC 7 OF 38?!\n";
+                            cout << "We are going to be here ALL NIGHT.\n";
+                            cout << "And you KNOW disc 37 is going to be corrupted.\n";
+                            cout << "At this point just throw the computer away and start over.\n";
+                
+                            points += 200;
+                            sus_points += 1000;
+                
+                            cout << "You have earned 200 points for surviving legacy Windows installation media.\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q9 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "ERROR: User input not found in System32.\n";
+                            cout << "Please reboot contestant and try again.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
                 } // end of unhinged question 9 put question 10 here
 
-                // Unhinged question 10
-                cout << UNHINGED_QUESTION_10;
 
-                // Put question 10 answer options here
-                cout << "1. you legit only have 10 seconds... \n";
-                cout << "2. I wrote a code block and Im testing it here...\n";
-                cout << "3. I really hope this works\n";
-                cout << "4. Are you keeping track of the time?\n";
+                // Unhinged question 10... this is the chronos question do later
 
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_unhinged_question_10;
-
-                switch (answer_2_unhinged_question_10)
-                { // switch for unhinged question 10 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
-                } // end of unhinged question 10 put question 11 here
-
-                // Unhinged question 11
+                // unhinged question 11 A NEW HAND TOUCHES THE BEACON
+                while (answering_q11 == true)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                  A NEW HAND TOUCHES\n";
+                    cout << "                       THE BEACON\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_11;
+                
+                    cout << "1. Pick up the beacon.\n";
+                    cout << "2. Fine... I'll do the quest.\n";
+                    cout << "3. Throw the beacon away.\n";
+                    cout << "4. Take it to Mount Kilkreath and question every decision that led me here.\n";
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_11;
+                
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    switch (answer_2_unhinged_question_11)
+                    {
+                        case 1:
+                            cout << "You picked up the beacon...\n";
+                            cout << "Oh no.\n";
+                            cout << "You fool.\n";
+                            cout << "You absolute fool.\n";
+                            cout << "You hear a voice screaming directly into your skull:\n\n";
+                            cout << "\"A NEW HAND TOUCHES THE BEACON.\"\n\n";
+                            cout << "Congratulations, " << contestants_name << ".\n";
+                            cout << "You have acquired a quest whether you wanted one or not.\n";
+                
+                            points += 100;
+                            sus_points += 500;
+                
+                            cout << "You have earned 100 points!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q11 = false;
+                            break;
+                
+                        case 2:
+                            cout << "Fine... you'll do the quest?\n";
+                            cout << "Thats the spirit.\n";
+                            cout << "Not because you WANT to...\n";
+                            cout << "but because Meridia has already decided that you are doing it.\n";
+                            cout << "Your consent was apparently more of a suggestion.\n";
+                            cout << "Time to go clean out another dungeon full of angry undead.\n";
+                
+                            points += 150;
+                            sus_points += 300;
+                
+                            cout << "You have earned 150 points for accepting your fate!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q11 = false;
+                            break;
+                
+                        case 3:
+                            cout << "You throw the beacon away.\n";
+                            cout << "It rolls across the ground...\n";
+                            cout << "You turn around and begin walking away.\n";
+                            cout << "Finally.\n";
+                            cout << "Peace and quiet.\n\n";
+                
+                            cout << "...\n";
+                            cout << "...\n";
+                            cout << "...\n\n";
+                
+                            cout << "A NEW HAND TOUCHES THE BEACON.\n";
+                            cout << "WAIT WHAT?!\n";
+                            cout << "HOW IS IT BACK IN YOUR INVENTORY?!\n";
+                            cout << "NO.\n";
+                            cout << "YOU ARE NOT ESCAPING THIS QUEST.\n\n";
+                
+                            points -= 50;
+                            sus_points += 1000;
+                
+                            cout << "You lose 50 points for attempting to escape Meridia.\n";
+                            cout << "Try again.\n\n";
+                
+                            // DO NOT set answering_q11 to false here.
+                            // This makes the entire question restart.
+                            break;
+                
+                        case 4:
+                            cout << "Mount Kilkreath...\n";
+                            cout << "You already know where you're going?!\n";
+                            cout << "You've done this before, havent you?\n";
+                            cout << "You saw the weird geometric golf ball in the chest\n";
+                            cout << "and immediately knew your afternoon was ruined.\n";
+                            cout << "Go restore Meridia's temple and collect Dawnbreaker.\n";
+                            cout << "At least you get a cool sword out of this mess.\n";
+                
+                            points += 200;
+                            sus_points += 69;
+                
+                            cout << "You have earned 200 points for knowing exactly how this nonsense ends!\n\n";
+                            cout << contestants_name << "'s total points: " << points << endl;
+                
+                            answering_q11 = false;
+                            break;
+                
+                        default:
+                            cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                            cout << "Meridia does not recognize your pathetic fifth option.\n";
+                            cout << "A NEW HAND TOUCHES THE BEACON.\n";
+                            cout << string(width_of_panel, '=') << endl;
+                            break;
+                    }
+                } // end of unhinged question 11
+                
+                // Unhinged question 12
+                cout << "\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "                     FINAL QUESTION\n";
+                cout << "                  ANTI-BRAIN-ROT TEST\n";
+                cout << string(width_of_panel, '=') << endl;
                 cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1;
 
-                // Put question 11 answer options here
+                // Put question 12 answer options here
                 // cout << "1. \n";
                 // cout << "2. \n";
                 // cout << "3. \n";
@@ -1592,7 +2115,7 @@ int main()
                 cin >> answer_2_anti_brain_rot;
 
                 switch (answer_2_anti_brain_rot)
-                { // switch for unhinged question 11 choices.
+                { // switch for unhinged question 12 choices.
                     case 1:
                         // Put response for answer 1 here
                         // Add or subtract points here
@@ -1620,7 +2143,7 @@ int main()
                     default:
                         cout << "Please Give and answer using 1,2,3 or 4 please...\n";
                         break;
-                } // end of unhinged question 11
+                } // end of unhinged question 12
             }
 
             break;
