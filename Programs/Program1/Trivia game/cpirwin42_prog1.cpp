@@ -33,21 +33,17 @@ _____                                                   _____
 */
 
 #include <iostream>
-#include <set>
-#include <string>
-#include <iomanip>
-#include <cctype>
-#include <cstdlib>
 #include <string>
 #include <cctype>
+
 // Im testing something with chrono for a time func
+// https://www.geeksforgeeks.org/cpp/chrono-in-c/
+// This is where I got the idea for chrono... and me hating myself.
 #include <chrono>
-
-
-
-
+#include <limits>
 
 using namespace std;
+using namespace std::chrono; //need this for chrono to work it seems...
 
 int main()
 {
@@ -66,7 +62,7 @@ int main()
      *  - We will be out putting to the user the questions so : cout << "Question " << questions_num_1 << ": How many toasters can you fit inside a bathtub full of water?\n";
      *    then we list off questions and have one of those preset as the correct answer with a switch statement
      *  - then we will output total score. If they get more than 50% then they are Cool and can join the HORDE... if they get under 50% they are a chud of the Alliance.
-     *  - please dont questions me and lets hope I dont keep this comment section... ((realistically what I should do... I have Horde and Alliance questions. I have a secret var I track for each horde question
+     *  - please dont question me and lets hope I dont keep this comment section... ((realistically what I should do... I have Horde and Alliance questions. I have a secret var I track for each horde question
      *      and each alliance question they get right... and then at the end we tell them which side they got more right they get to join. if they get them all wrong we throw them into the Maelstrom.))
      *          TO ADD ONTO, if they get a Horde question wrong the ally score goes up and vise versa?????
      *  - GG THIS IS THE PLAN
@@ -115,10 +111,8 @@ int main()
     int answer_2_unhinged_question_9(0);
     int answer_2_unhinged_question_10(0);
     int answer_2_unhinged_question_11(0);
-    int answer_2_anti_brain_rot(0);
 
     // strings
-    //
     string contestants_name("");
     // questions to be asked
     //  Normal questions
@@ -133,16 +127,17 @@ int main()
     const string WARCRAFT_TRIVIA_QUESTION_9 = "What is the capital city of the human kingdom of Stormwind?\n";
     const string WARCRAFT_TRIVIA_QUESTION_10 = "What was the name of Arthas's kingdom before he became the Lich King?\n";
 
-    // The book is open source and gotten from "https://www.gutenberg.org/cache/epub/72572/pg72572-images.html"
-    //  The book is called Computers-- The machines we think with | Project Gutenberg
-    //  Author: D. S. Halacy
-    //  Release date: January 1, 2024
-    //  Original publication: New York: Harper & Row, 1962
+    /*  
+     *The book is open source and gotten from "https://www.gutenberg.org/cache/epub/72572/pg72572-images.html"
+     * The book is called Computers-- The machines we think with | Project Gutenberg
+     * Author: D. S. Halacy
+     * Release date: January 1, 2024
+     * Original publication: New York: Harper & Row, 1962
+    */ 
 
-    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1 = R"(
-    ======================================================================
-                             REQUIRED READING
-    ======================================================================
+    //https://www.geeksforgeeks.org/cpp/raw-string-literal-c/ -- where I learned about the methond below
+    // The R"(placetextinhere.txt)" allows me to avoid using a crap ton of cout statments for this part
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_1 = R"(
     
     Among the computer's unusual talents is the ability to compose music.
     Such music has been published and is of a quality to give rise to
@@ -156,24 +151,34 @@ int main()
     At Christmas time, carols are rendered by computers specially
     programmed for the task. The result is not unlike a melody played on
     a pipe organ.
-    
+    )";
+
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_2 = R"(
     In an interesting switch of this musical ability on the part of the
     machine, Russian engineers check the reliability of their computers
     by having them memorize Mozart and Grieg. Each part of the complex
     machines is assigned a definite musical value, and when the composition
     is "played back" by the computer, the engineer can spot any defects
-    existing in its circuitry. Such computer maintenance would seem to be
-    an ideal field for the music lover.
+    existing in its circuitry.
+    
+    Such computer maintenance would seem to be an ideal field for the
+    music lover.
     
     In a playful mood, computers match pennies with visitors, explain their
     inner workings as they whiz through complex mathematics, and are even
     capable of what is called heuristic reasoning. This amounts to playing
     hunches to reach short-cut solutions to otherwise unsolvable problems.
-    
+    )";
+
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_3 = R"(
     A Rand Corporation computer named JOHNNIAC demonstrated this recently.
     It was given some basic axioms and asked to prove some theorems.
+    
     JOHNNIAC came up with the answers, and in one case produced a proof
-    that was simpler than that given in the text. As one scientist puts it,
+    that was simpler than that given in the text.
+    
+    As one scientist puts it,
+    
     "If computers don't really think, they at least put on a pretty
     creditable imitation of the real thing."
     
@@ -181,29 +186,44 @@ int main()
     The only question remaining is how fast the predictions made by
     dreamers and science-fiction writers -- and now by sober scientists --
     will come to be a reality.
-    
+    )";
+
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_4 = R"(
     When we consider that in the few years since the 1953 crop of computers,
     their capacity and speed has been increased more than fiftyfold, and is
     expected to jump another thousandfold in two years, these dreams begin
     to sound more and more plausible.
     
     One quite probable use for computers is medical diagnosis and
-    prescription of treatment. Electronic equipment can already monitor an
-    ailing patient, and send an alarm when help is needed. We may one day
-    see computers with a built-in bedside manner aiding the family doctor.
+    prescription of treatment.
     
+    Electronic equipment can already monitor an ailing patient, and send
+    an alarm when help is needed. We may one day see computers with a
+    built-in bedside manner aiding the family doctor.
+    )";
+
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_5 = R"(
     The accomplished inroads of computing machines in business are as
-    nothing to what will eventually take place. Already computer
-    "game-playing" has extended to business management, and serious
-    executives participate to improve their administrative ability.
+    nothing to what will eventually take place.
+    
+    Already computer "game-playing" has extended to business management,
+    and serious executives participate to improve their administrative
+    ability.
     
     We speak of decision-making machines; business decisions are logical
-    applications for this ability. Computers have been given the job of
-    evaluating personnel and assigning salaries on a strictly logical
-    basis. Perhaps this is why in surveys questioning increased use of the
+    applications for this ability.
+    )";
+
+    const string ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_6 = R"(
+    Computers have been given the job of evaluating personnel and assigning
+    salaries on a strictly logical basis.
+    
+    Perhaps this is why in surveys questioning increased use of the
     machines, each executive level in general tends to rate the machine's
     ability just below its own.
     
+    ======================================================================
+                             END OF READING
     ======================================================================
     )";
 
@@ -219,7 +239,7 @@ int main()
     const string UNHINGED_QUESTION_9 = "If you delete System32, does Windows become System31?\n";
     const string UNHINGED_QUESTION_10 = "You have 10 seconds to answer this question. What happens if you take 11?\n";
     const string UNHINGED_QUESTION_11 = "A NEW HAND TOUCHES THE BEACON\n";
-    const string UNHINGED_QUESTION_12 = "Final question: Are you absolutely sure you want me to calculate your score?\n";
+    
 
     // bools
     bool answering_q1(true);
@@ -233,14 +253,14 @@ int main()
     bool answering_q9(true);
     bool answering_q10(true);
     bool answering_q11(true);
-    bool answering_q12(true);
+    
 
     // We start dah code here
 
     while (playing_trivia == true)
     {
 
-        // RESET GAME VALUES
+        // RESET DAH GAME VALUES
         points = 0;
         hidden_alliance = 0;
         hidden_horde = 0;
@@ -256,7 +276,6 @@ int main()
         answering_q9 = true;
         answering_q10 = true;
         answering_q11 = true;
-        answering_q12 = true;
 
         cout << "=========================================================\n";
         cout << "Welcome To Warcraft Trivia night! Hosted by Sargeras!\n";
@@ -316,7 +335,7 @@ int main()
                             break;
 
                         case 2:
-                            cout << "That is correct! congradulations Youve earned 100 points!\n";
+                            cout << "That is correct! congratulations Youve earned 100 points!\n";
                             hidden_horde++;
                             hidden_alliance--;
                             points += 100;
@@ -340,7 +359,7 @@ int main()
 
                         case 4:
                             cout << "The correct answer was Dragon Soul.\n";
-                            cout << "Did you just get done playing a FromSoft game??? This is a Blizzard tittle man...\n";
+                            cout << "Did you just get done playing a FromSoft game??? This is a Blizzard title man...\n";
                             hidden_alliance--;
                             hidden_horde++;
                             points -= 100;
@@ -434,7 +453,7 @@ int main()
 
                         case 5:
                             cout << "The correct answer was Frostmourne.\n";
-                            cout << "Listen youre kinda right, that its a weapon once weilded by Arthas... but its not a runeblade!\n";
+                            cout << "Listen youre kinda right, that its a weapon once wield by Arthas... but its not a runeblade!\n";
                             cout << "You will be deducted 100 points!\n\n";
                             hidden_horde++;
                             hidden_alliance--;
@@ -756,7 +775,7 @@ int main()
     
                         case 4:
                             cout << "The correct answer was Icecrown Citadel.\n";
-                            cout << "He makes a brief apperance here but we do not defeat him at this time.\n";
+                            cout << "He makes a brief appearance here but we do not defeat him at this time.\n";
                             cout << "Sorry but youve chosen the wrong answer.\n";
                             hidden_alliance--;
                             hidden_horde++;
@@ -1144,7 +1163,7 @@ int main()
                 } // end of question 10
 
                 break;
-            } // closes case 1 block
+            } // closes case 1 block... wowzers we done did it...
 
             case 2: // this is unhinged trivia
             {       // start of case 2
@@ -1159,7 +1178,7 @@ int main()
                 cout << string(width_of_panel, '=') << endl;
 
                 // Unhinged question 1
-                while (answering_q1 == true)
+                while (answering_q1 == true) //goated
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1232,7 +1251,7 @@ int main()
                     }
                 } // end of unhinged question 1
 
-                while (answering_q2 == true)
+                while (answering_q2 == true) //good needs formatting
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1243,7 +1262,7 @@ int main()
                     cout << "2. No, What is on Second.\n";
                     cout << "3. I don't know is on Third.\n";
                     cout << "4. Nobody is on right field.\n";
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_2;
@@ -1304,7 +1323,7 @@ int main()
                 } // end of unhinged question 2 put question 3 here
 
                 // Unhinged question 3
-                while (answering_q3 == true)
+                while (answering_q3 == true) //good just need to add formatting
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1317,7 +1336,7 @@ int main()
                     cout << "3. I legally cannot tell you.\n";
                     cout << "4. Nice try, OSI.\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_3;
@@ -1399,7 +1418,7 @@ int main()
                 }//end of q3
 
                 //start of Q4 unhinged, like myself.
-                while (answering_q4 == true)
+                while (answering_q4 == true) //needs formatting but good otherwise.
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1412,7 +1431,7 @@ int main()
                     cout << "3. What do I need it for? uh...\n";
                     cout << "4. Chicken nuggies. :D\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_4;
@@ -1493,7 +1512,7 @@ int main()
                 } // end of unhinged question 4 put question 5 here
 
                 // Unhinged question 5
-                while (answering_q5 == true)
+                while (answering_q5 == true)//needs formatting but good otherwise
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1506,7 +1525,7 @@ int main()
                     cout << "3. Were they trained by Batman?\n";
                     cout << "4. Then it depends on whether the raccoons have prep time\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_5;
@@ -1533,9 +1552,10 @@ int main()
                 
                         case 2:
                             cout << "Seven raccoons...\n";
-                            cout << "Now THAT sounds like a reasonable amount of chaos.\n";
-                            cout << "At that point the grown man isnt fighting raccoons anymore...\n";
+                            cout << "Now THAT sounds like a reasonable amount of that a man could fight.\n";
+                            cout << "At that point that man isnt fighting raccoons anymore...\n";
                             cout << "He's participating in a boss encounter.\n";
+                            cout << "But is the man the boss... or the racoons???????\n";
                             cout << "I'm giving you this one.\n";
                 
                             points += 100;
@@ -1588,7 +1608,7 @@ int main()
                     }
                 } // end of unhinged question 5 put question 6 here
 
-                while (answering_q6 == true)
+                while (answering_q6 == true) //good needs formatting.
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1601,7 +1621,7 @@ int main()
                     cout << "3. Its me I can totally corrupt all the memory on your computer.\n";
                     cout << "4. Listen, I wouldnt do that. It was just a statement... but I could, who needs memory anyway?\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_6;
@@ -1687,7 +1707,7 @@ int main()
                 } // end of unhinged question 6 put question 7 here
 
                 // Unhinged question 7
-                while (answering_q7 == true)
+                while (answering_q7 == true)//good
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1700,7 +1720,7 @@ int main()
                     cout << "3. I cry myself to sleep\n";
                     cout << "4. Im sorry... I cant think of anything to put here, this is the correct answer please pick it...\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_7;
@@ -1784,7 +1804,7 @@ int main()
                 } // end of unhinged question 7 put question 8 here
 
                 // Unhinged question 8
-                while (answering_q8 == true)
+                while (answering_q8 == true)//good
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1797,7 +1817,7 @@ int main()
                     cout << "3. 3\n";
                     cout << "4. Wait they fired you to hire someone overseas for one-tenth the price...\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_8;
@@ -1883,7 +1903,7 @@ int main()
                 } // end of unhinged question 8 put question 9 here
 
                 // Unhinged question 9
-                while (answering_q9 == true)
+                while (answering_q9 == true)//good
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1896,7 +1916,7 @@ int main()
                     cout << "3. U3lzdGVtMzEgaXMgYSBmZWF0dXJlLCBub3QgYSBidWcu\n";
                     cout << "4. ████ DATA LOST ████ Please insert Windows 95 Disc 7 of 38.\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_9;
@@ -1982,9 +2002,113 @@ int main()
 
 
                 // Unhinged question 10... this is the chronos question do later
+                while (answering_q10 == true)
+                {
+                    //const string UNHINGED_QUESTION_10 = "You have 10 seconds to answer this question. What happens if you take 11?\n";
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                       QUESTION 10\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << UNHINGED_QUESTION_10;
+
+                    cout << "1. No really Im testing something here... youre just a gunniea pig.\n";
+                    cout << "2. Okay its a partial lie, you actually have 15 seconds, the goal was to make you rush.\n";
+                    cout << "3. OR WAS THAT A LIE, ARE YOU EVEN MORE PANICED NOW? YOU ONLY HAVE LESS TIME THAN BEFORE NOW!\n";
+                    cout << "4. NO NO NO, WAIT WAIT WAIT  ╰(𝓞⌓𝓞)╯ ( •᷄ᯅ•᷅ ) (ﾉಥ益ಥ）ﾉ ₍₍⚞(˶˃ ꒳ ˂˶)⚟⁾⁾\n\n"; // okay they dont show up on the screen... BUT THEY ARE STAYING I think its funny.
+
+                    cout << string(width_of_panel, '-') << endl;
+
+                    //starting dah timer boss *Some gobling mob boss throws another goblin onto a gernade*
+                    auto start_time = steady_clock::now(); 
+                
+                    cout << contestants_name << "'s answer: ";
+                    cin >> answer_2_unhinged_question_10;
+
+                    //Stopping the clock *the goblin ontop of the gernade may nor may not exist anymore. I cannot confirm...
+                    auto end_time = steady_clock::now();
+
+                    //Cal the total time spent.
+                    auto elapsed_time = duration_cast<seconds>(end_time - start_time);
+
+                    if (elapsed_time.count() > 15)
+                    {
+                        cout << "\nTOO SLOW!\n";
+                        cout << "You had 15 seconds and took " << elapsed_time.count() << " seconds!\n";
+                        
+                        answering_q10 = false;
+                    }
+                    else 
+                    {
+                
+                        cout << string(width_of_panel, '=') << endl;
+    
+                        
+                        switch (answer_2_unhinged_question_10){//start of switch case
+                            case 1:
+                                cout << "I appreciate you taking the time out of your day to sign up for this case study!\n";
+                                cout << "Okay well Its not a case... nor a study... I was just bored...\n";
+                                cout << "now what if I said there is another test later on...\n";
+                    
+                                points += 100;
+                                sus_points += 500;
+                    
+                                cout << "You have earned 100 points!\n\n";
+                                cout << contestants_name << "'s total points: " << points << endl;
+                    
+                                answering_q10 = false;
+                                break;
+    
+                            case 2:
+                                cout << "See arnt you Glad I gave you the extra 5 seconds? if i had you would of been much worse off...\n";
+
+                                points += 100;
+                                sus_points += 500;
+                    
+                                cout << "You have earned 100 points!\n\n";
+                                cout << contestants_name << "'s total points: " << points << endl;
+                    
+                                answering_q10 = false;
+                                break;
+    
+                            case 3:
+                                cout << "I didnt actually lie to you I gave you 15 seconds, was just trying to cause a scene.\n";
+
+                                
+                                points += 100;
+                                sus_points += 500;
+                    
+                                cout << "You have earned 100 points!\n\n";
+                                cout << contestants_name << "'s total points: " << points << endl;
+                    
+                                answering_q10 = false;
+                                break;
+                            case 4:
+                                cout << "Did you seeing those guys also make you panic? I hope so, that was the goal!\n";
+                                cout << "	(˵ ͡° ͜ʖ ͡°˵)  	(•_•) ( •_•)>⌐■-■ (⌐■_■) \n";
+                                cout << " That was cool... wasnt it?... yea no sorry.\n";
+
+                                points += 100;
+                                sus_points += 500;
+                    
+                                cout << "You have earned 100 points!\n\n";
+                                cout << contestants_name << "'s total points: " << points << endl;
+                    
+                                answering_q10 = false;
+                                break;
+                                
+                            default :
+                                cout << "Please Give an answer using 1,2,3 or 4 please...\n";
+                                
+                                cout << string(width_of_panel, '=') << endl;
+                                break;
+                        } //end of switch case
+                        
+                    }//end of the else
+                    
+                }// end of while loop and question
 
                 // unhinged question 11 A NEW HAND TOUCHES THE BEACON
-                while (answering_q11 == true)
+                while (answering_q11 == true)//good
                 {
                     cout << "\n";
                     cout << string(width_of_panel, '=') << endl;
@@ -1994,11 +2118,13 @@ int main()
                     cout << UNHINGED_QUESTION_11;
                 
                     cout << "1. Pick up the beacon.\n";
-                    cout << "2. Fine... I'll do the quest.\n";
+                    cout << "2. Walk past the beacon, not even looking at it.\n";
                     cout << "3. Throw the beacon away.\n";
                     cout << "4. Take it to Mount Kilkreath and question every decision that led me here.\n";
+                    cout << "Ill meta game this one a bit so you dont think its broken...\n";
+                    cout << "There are 4 choices but only 1 correct one here.\n";
                 
-                    cout << string(width_of_panel, '=') << endl;
+                    cout << string(width_of_panel, '-') << endl;
                 
                     cout << contestants_name << "'s answer: ";
                     cin >> answer_2_unhinged_question_11;
@@ -2023,7 +2149,8 @@ int main()
                             cout << "You have earned 100 points!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                 
-                            answering_q11 = false;
+                            // DO NOT set answering_q11 to false here.
+                            // This makes the entire question restart.
                             break;
                 
                         case 2:
@@ -2040,7 +2167,8 @@ int main()
                             cout << "You have earned 150 points for accepting your fate!\n\n";
                             cout << contestants_name << "'s total points: " << points << endl;
                 
-                            answering_q11 = false;
+                            // DO NOT set answering_q11 to false here.
+                            // This makes the entire question restart.
                             break;
                 
                         case 3:
@@ -2096,57 +2224,135 @@ int main()
                             break;
                     }
                 } // end of unhinged question 11
+
                 
-                // Unhinged question 12
                 cout << "\n";
                 cout << string(width_of_panel, '=') << endl;
                 cout << "                     FINAL QUESTION\n";
                 cout << "                  ANTI-BRAIN-ROT TEST\n";
                 cout << string(width_of_panel, '=') << endl;
-                cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1;
-
-                // Put question 12 answer options here
-                // cout << "1. \n";
-                // cout << "2. \n";
-                // cout << "3. \n";
-                // cout << "4. \n";
-
-                cout << contestants_name << "'s answer: ";
-                cin >> answer_2_anti_brain_rot;
-
-                switch (answer_2_anti_brain_rot)
-                { // switch for unhinged question 12 choices.
-                    case 1:
-                        // Put response for answer 1 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 2:
-                        // Put response for answer 2 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 3:
-                        // Put response for answer 3 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    case 4:
-                        // Put response for answer 4 here
-                        // Add or subtract points here
-                        // Add or subtract sus_points here
-                        break;
-
-                    default:
-                        cout << "Please Give and answer using 1,2,3 or 4 please...\n";
-                        break;
-                } // end of unhinged question 12
-            }
+                
+                cout << "I heard them Gen-Z dont like reading... nor do I, but IM ASKING THE QUESTIONS HERE!\n";
+                cout << "So how this is going to work, Im going to give you portions of a reading.\n";
+                cout << "Press ENTER whenever youre finished with each section.\n";
+                cout << "Should be a nice break from all the other things youve done thus far.\n";
+                
+                string continue_reading;
+                int reading_section = 1;
+                
+                // Clear previous input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                
+                // Start reading timer
+                auto reading_start = steady_clock::now();
+                
+                while (reading_section <= 6)
+                {
+                    cout << "\n";
+                    cout << string(width_of_panel, '=') << endl;
+                    cout << "                     SECTION "
+                         << reading_section
+                         << " OF 6\n";
+                    cout << string(width_of_panel, '=') << endl;
+                
+                    if (reading_section == 1)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_1;
+                    }
+                    else if (reading_section == 2)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_2;
+                    }
+                    else if (reading_section == 3)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_3;
+                    }
+                    else if (reading_section == 4)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_4;
+                    }
+                    else if (reading_section == 5)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_5;
+                    }
+                    else if (reading_section == 6)
+                    {
+                        cout << ANTI_BRAIN_ROT_TRIVIA_QUESTION_1_PART_6;
+                    }
+                
+                    cout << "\nPress ENTER when finished with this section...";
+                    getline(cin, continue_reading);
+                
+                    reading_section++;
+                }
+                
+                // Stop reading timer
+                auto reading_end = steady_clock::now();
+                
+                auto elapsed =
+                    duration_cast<seconds>(reading_end - reading_start);
+                
+                // Store the time so it's easier to use
+                int reading_time = elapsed.count();
+                
+                cout << "\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "                  READING COMPLETE\n";
+                cout << string(width_of_panel, '=') << endl;
+                
+                cout << "\nYou finished the reading in "
+                     << reading_time
+                     << " seconds.\n\n";
+                
+                
+                // Determine score based on reading time
+                
+                if (reading_time <= 60)
+                {
+                    cout << "WHAT THE HELL?!\n";
+                    cout << "Did you actually read that or did your eyes just teleport to the bottom?\n";
+                    
+                    // Add points here
+                    points += 10;
+                
+                    // Maybe suspicious because they read VERY fast
+                    sus_points += 5;
+                }
+                else if (reading_time <= 90)
+                {
+                    cout << "Okay... that was actually pretty fast.\n";
+                    cout << "Maybe TikTok hasnt completely destroyed your attention span yet.\n";
+                
+                    points += 10;
+                }
+                else if (reading_time <= 120)
+                {
+                    cout << "Not bad!\n";
+                    cout << "You survived multiple paragraphs without a Subway Surfers video underneath them.\n";
+                
+                    points += 8;
+                }
+                else if (reading_time <= 180)
+                {
+                    cout << "You took your time, but you made it through.\n";
+                    cout << "The anti-brain-rot treatment appears to be working.\n";
+                
+                    points += 6;
+                }
+                else
+                {
+                    cout << "Brother...\n";
+                    cout << "I could have mailed you the paragraph and gotten a response faster.\n";
+                    cout << "We may have a terminal case of brain rot here.\n";
+                
+                    points += 3;
+                    sus_points += 5;
+                }
+                
+                cout << string(width_of_panel, '=') << endl;
 
             break;
+            }
 
             default: // def of inital switch
                 cout << "Please choose 1 or 2.\n";
@@ -2158,23 +2364,76 @@ int main()
         // This is the loop to see if the user wants to replay the game.
         while (valid_restart_answer == false)
         {
-            cout << "\n";
-            cout << string(width_of_panel, '=') << endl;
-            cout << "TRIVIA COMPLETE!\n";
-            cout << contestants_name << "'s FINAL SCORE: " << points << endl;
-            cout << string(width_of_panel, '=') << endl;
-            cout << "We were also trying to help you decided which faction to join for the release of\n";
-            cout << "WoW Forever!\n";
-            cout << "Which ever faction you scored higher on is the one we give you!\n";
-            if (hidden_alliance > hidden_horde) 
+            if (trivia_game_choice == 1)
             {
-                cout << "We suggest that you join... The Alliance but the only race you can pick is a gnome...\n\n";
+                cout << "\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "                    FACTION RESULTS\n";
+                cout << string(width_of_panel, '=') << endl;
+            
+                if (hidden_alliance > hidden_horde)
+                {
+                    cout << "We suggest that you join... THE ALLIANCE!\n";
+                    cout << "Unfortunately, you are legally required to play a Gnome.\n";
+                }
+                else if (hidden_horde > hidden_alliance)
+                {
+                    cout << "Welcome to THE HORDE!\n";
+                    cout << "We have Orcs, Trolls, Tauren, Undead...\n";
+                    cout << "and substantially worse city planning.\n";
+                }
+                else
+                {
+                    cout << "Interesting...\n";
+                    cout << "You scored EXACTLY the same for Horde and Alliance.\n";
+                    cout << "By completely unbiased Sargeras-approved rules...\n";
+                    cout << "WELCOME TO THE HORDE!\n";
+                }
             }
-            else 
+            else if (trivia_game_choice == 2)
             {
-                cout << "Welcome to the horde, we have undead, trolls, ORCS, and Taurens!\n\n";
+                cout << "\n";
+                cout << string(width_of_panel, '=') << endl;
+                cout << "                  SUSPICION REPORT\n";
+                cout << string(width_of_panel, '=') << endl;
+            
+                cout << "Suspicion Points: " << sus_points << endl;
+            
+                if (sus_points < 500)
+                {
+                    cout << "Suspicion Level: MOSTLY NORMAL\n";
+                    cout << "Honestly... I'm disappointed. Do better next time...\n";
+                    cout << "Chat, Leak his moms address followdy by his middle name.\n";
+                }
+                else if (sus_points < 1500)
+                {
+                    cout << "Suspicion Level: QUESTIONABLE\n";
+                    cout << "Some of your answers have raised concerns. BUT CLEARLY NOT ENOUGH\n";
+                }
+                else if (sus_points < 3000)
+                {
+                    cout << "Suspicion Level: EXTREMELY SUSPICIOUS\n";
+                    cout << "OSI has been notified.\n";
+                    cout << "Whos OSI? you dont wanna know.\n";
+                }
+                else if (sus_points < 5000)
+                {
+                    cout << "Suspicion Level: ACTIVE THREAT\n";
+                    cout << "Please remain exactly where you are.\n";
+                    cout << "Someone definitely isn't on their way.\n";
+                    cout << "Chat this guys gonna get got.\n";
+                }
+                else
+                {
+                    cout << "Suspicion Level: ???\n";
+                    cout << "We stopped measuring you several questions ago.\n";
+                    cout << "This score is now being studied by professionals.\n";
+                }
+            
+                cout << string(width_of_panel, '=') << endl;
             }
 
+            //gotta ask if they wanna replay dah game...
             
             cout << "Do you want to play the game again? (yes/no): ";
             cin >> playing_trivia_restart;
